@@ -11,7 +11,7 @@ const ProjectDetails = (props) => {
       .get(`${config.API_URL}/api/project/${projectId}`)
       .then((response) => setProject(response.data))
       .catch((err) => console.log("Getting project failed", err));
-  });
+  }, [setProject, projectId]);
 
   return <div>
   <h2>{project.name}</h2>

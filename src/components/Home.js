@@ -11,7 +11,7 @@ const Home = () => {
       .get(`${config.API_URL}/api/projects`)
       .then((response) => setProjects(response.data))
       .catch((err) => console.log("Getting projects failed", err));
-  });
+  }, [setProjects]);
 
   return (
     <div>

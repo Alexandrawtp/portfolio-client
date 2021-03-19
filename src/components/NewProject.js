@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "./Button.js";
 import axios from "axios";
 import config from "../config";
+import LogoutBtn from "./LogoutBtn";
 
 
 export default function Form() {
@@ -20,6 +21,9 @@ export default function Form() {
     let url = e.target.url.value;
     let teammates = e.target.teammates.value;
     let githubRepo = e.target.githubRepo.value;
+    let images = e.target.projectImage.files[0];
+    let uploadForm = new FormData();
+    uploadForm.append('imageUrl', images);
 
     axios.post(`${config.API_URL}/api/create`, {
       name,
@@ -30,6 +34,7 @@ export default function Form() {
       url,
       teammates,
       githubRepo,
+      //images: response.data.images
     })
     .then(response => console.log(response.data), history.push("/"))
     .catch(err => console.log(err))
@@ -37,6 +42,7 @@ export default function Form() {
 
   return (
     <form onSubmit={addData}>
+    <LogoutBtn />
       <React.Fragment>
         <Typography variant="h6" gutterBottom>
           New project
@@ -85,6 +91,9 @@ export default function Form() {
               label="Github Repository"
               fullWidth
             />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <input name="portfolioImage" type="file" />
           </Grid>
         </Grid>
       </React.Fragment>

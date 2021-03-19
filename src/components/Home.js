@@ -16,10 +16,10 @@ const Home = () => {
   return (
     <div>
       <h1>Welcome to my Portfolio</h1>
-      <section className="boxes">
+      <section className="projects-group">
       {projects.map((project, index) => (
-          <div key={index}>
-            <Link to={`/project/${project._id}`}>
+          <div key={index} className="boxes">
+            <Link to={`/project/${project._id}`} className="no-style-link text-boxes">
               <h3>{project.name}</h3>
             </Link>
           </div>

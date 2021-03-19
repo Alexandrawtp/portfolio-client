@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => (
-  <div>
-    <Link to="/about">
-      <h3>About me</h3>
+  <div className="navBar">
+    <Link to="/about" className="no-style-link">
+      <h3>About</h3>
     </Link>
   </div>
 );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -10,6 +10,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import axios from "axios";
+import config from "../config";
 
 function Copyright() {
   return (
@@ -46,9 +48,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const [loggedInuser, setLoggedInUser] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    let userData = {
+      email: e.target.email.value,
+      password: e.target.password.value
+    }
+
+    axios.post(`${config.API_URL}/api/signin`, userData)
+    .then((response) => setLoggedInUser(response.data))
+    .catch((error) => setErrorMessage(error.response.data.errorMessage))
+  };
+  console.log(errorMessage, loggedInuser);
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" onSubmit={handleSignIn}>
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
@@ -97,7 +114,7 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

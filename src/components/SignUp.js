@@ -5,25 +5,12 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
 import config from "../config";
-
-const Copyright = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Alexandra Westendorp
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
+import alertIcon from "../images/alert.png";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignUp() {
-  //  let history = useHistory();
+//  let history = useHistory();
   const classes = useStyles();
   const [loggedInuser, setLoggedInUser] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(false);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -65,13 +52,12 @@ export default function SignUp() {
       .then((response) => setLoggedInUser(response.data))
       .catch((error) => setErrorMessage(error.response.data.errorMessage));
   };
-  console.log(errorMessage);
-  
+
   return (
     <Container component="main" maxWidth="xs" onSubmit={handleSignUp}>
       <CssBaseline />
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" className="form-title">
           Sign up
         </Typography>
         <form className={classes.form} noValidate>
@@ -122,6 +108,9 @@ export default function SignUp() {
                 autoComplete="current-password"
               />
             </Grid>
+            <div>
+            {errorMessage? <div className="error-message"><img src={alertIcon} alt="alert-icon" className="alert-icon" /><p>{errorMessage}</p> </div>: null}
+            </div>
           </Grid>
           <Button
             type="submit"
@@ -141,9 +130,6 @@ export default function SignUp() {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

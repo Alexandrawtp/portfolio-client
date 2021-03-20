@@ -35,3 +35,16 @@ h1 {
 .text-boxes {
   margin: 20px;
 }
+
+.alert-icon {
+  width: 14px;
+  height: 15px;
+  margin: 0 10px;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  color: rgb(219, 59, 94);
+  font-weight: bold;
+}

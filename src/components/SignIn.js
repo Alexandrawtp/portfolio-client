@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -6,25 +7,12 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
 import config from "../config";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Alexandra Westendorp
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import alertIcon from "../images/alert.png";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -47,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+  let history = useHistory();
   const classes = useStyles();
   const [loggedInuser, setLoggedInUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -59,7 +48,7 @@ export default function SignIn() {
     }
 
     axios.post(`${config.API_URL}/api/signin`, userData)
-    .then((response) => setLoggedInUser(response.data))
+    .then((response) => setLoggedInUser(response.data), history.push("/add"))
     .catch((error) => setErrorMessage(error.response.data.errorMessage))
   };
   console.log(errorMessage, loggedInuser);
@@ -94,6 +83,9 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
+          <div>
+            {errorMessage? <div className="error-message"><img src={alertIcon} alt="alert-icon" className="alert-icon" /><p>{errorMessage}</p> </div>: null}
+            </div>
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
@@ -121,9 +113,6 @@ export default function SignIn() {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

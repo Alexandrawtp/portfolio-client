@@ -1,60 +1,20 @@
-import React, { useState } from "react";
-//import { useHistory } from "react-router-dom";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import axios from "axios";
-import config from "../config";
 import alertIcon from "../images/alert.png";
+import useStyles from "../components/FormStyle";
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: "100%",
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-
-export default function SignUp() {
-//  let history = useHistory();
+export default function SignUp(props) {
   const classes = useStyles();
-  const [loggedInuser, setLoggedInUser] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(false);
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    let user = {
-      firstName: e.target.firstName.value,
-      lastName: e.target.lastName.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
-    };
-
-    axios
-      .post(`${config.API_URL}/api/signup`, user)
-      .then((response) => setLoggedInUser(response.data))
-      .catch((error) => setErrorMessage(error.response.data.errorMessage));
-  };
+  const { loginUser } = props;
 
   return (
-    <Container component="main" maxWidth="xs" onSubmit={handleSignUp}>
+    <Container component="main" maxWidth="xs" onSubmit={loginUser}>
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5" className="form-title">
@@ -109,7 +69,16 @@ export default function SignUp() {
               />
             </Grid>
             <div>
-            {errorMessage? <div className="error-message"><img src={alertIcon} alt="alert-icon" className="alert-icon" /><p>{errorMessage}</p> </div>: null}
+              {props.error ? (
+                <div className="error-message">
+                  <img
+                    src={alertIcon}
+                    alt="alert-icon"
+                    className="alert-icon"
+                  />
+                  <p>{props.error}</p>
+                </div>
+              ) : null}
             </div>
           </Grid>
           <Button

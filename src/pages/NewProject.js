@@ -3,11 +3,9 @@ import { useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import Button from "./Button.js";
+import Button from "../components/Button.js";
 import axios from "axios";
 import config from "../config";
-import LogoutBtn from "./LogoutBtn";
-
 
 export default function Form() {
   let history = useHistory();
@@ -42,7 +40,6 @@ export default function Form() {
 
   return (
     <form onSubmit={addData}>
-    <LogoutBtn />
       <React.Fragment>
         <Typography variant="h6" gutterBottom>
           New project

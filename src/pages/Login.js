@@ -7,13 +7,12 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import alertIcon from "../images/alert.png";
-import useStyles from "../components/FormStyle";
+import UseStyles from "../components/UseStyle.js";
 
 
 export default function SignIn(props) {
-  const classes = useStyles();
+  const classes = UseStyles();
   const { loginUser } = props;
-  console.log(props)
 
   return (
     <Container component="main" maxWidth="xs">

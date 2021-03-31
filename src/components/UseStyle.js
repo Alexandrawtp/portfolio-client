@@ -1,11 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+const UseStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    margin: theme.spacing(1),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+  },
+  root: {
+    height: 180,
+  },
+  container: {
+    display: 'flex',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -20,4 +26,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default useStyles;
+export default UseStyles;

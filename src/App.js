@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.js";
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
@@ -17,9 +17,10 @@ const App = () => {
   const [authorized, setAuthorisation] = useState(null);
 
   const handleUserSession = () => {
+    console.log("handleSession called")
     axios.get(`${config.API_URL}/api/me`)
     .then((response) => setAuthorisation(response.data))
-    .catch(err => console.log(err))
+    .catch(err => console.log("No active session", err))
   }
 
   const handleSignUp = (e) => {
@@ -50,9 +51,6 @@ const App = () => {
       .then((response) => setLoggedInUser(response.data))
       .catch((error) => setErrorMessage(error.response.data.errorMessage));
   };
-  console.log(loggedInuser);
-  console.log(authorized);
-  handleUserSession()
 
   return (
     <Router>
@@ -60,9 +58,9 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/login" render={() => <Login loginUser={handleSignIn} user={loggedInuser} authorized={authorized} error={errorMessage}/>}/>
+        <Route path="/login" render={() => <Login loginUser={handleSignIn} user={loggedInuser} error={errorMessage}/>}/>
         <Route path="/signup" render={() => <SignUp loginUser={handleSignUp} error={errorMessage}/>} />
-        <Route path="/add" rcomponent = {NewProject} />
+        <Route path="/add" component = {NewProject} userSession={handleUserSession} user={loggedInuser}/>
         <Route path="/project/:id" render={(props) => <ProjectDetails {...props} />}/>
         <Route path="/" component={Error404} />
       </Switch>

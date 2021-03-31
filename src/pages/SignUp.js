@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import alertIcon from "../images/alert.png";
-import useStyles from "../components/FormStyle";
+import useStyles from "../components/UseStyle";
 
 export default function SignUp(props) {
   const classes = useStyles();

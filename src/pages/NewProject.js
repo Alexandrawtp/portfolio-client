@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
 import ThemeColor from "../components/ThemeColor.js";
@@ -6,7 +6,10 @@ import Button from "../components/Button.js";
 import axios from "axios";
 import config from "../config";
 
-export default function Form() {
+export default function Form(props) {
+  console.log(props)
+  const [setMessage] = useState(null);
+
   const addData = (e) => {
     e.preventDefault();
     console.log(e.target.backgroundColor.value);
@@ -39,6 +42,8 @@ export default function Form() {
           image: response.data.image,
           backgroundColor
         })
+        //  .then((response) => setMessage(response.data))
+        //  .catch((error) => setMessage(error.response.data.errorMessage))
       )
       .catch((err) => console.log(err));
   };

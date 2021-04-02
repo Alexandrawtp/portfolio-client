@@ -18,6 +18,10 @@ h3 {
   margin: 0 10%;
 }
 
+.form-style {
+  color: #cf4545;
+}
+
 .horizontally-align {
   display: flex;
   align-items: center;

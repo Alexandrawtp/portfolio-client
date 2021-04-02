@@ -14,7 +14,7 @@ import config from "./config";
 const App = () => {
   const [loggedInuser, setLoggedInUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const [authorized, setAuthorisation] = useState(null);
+  const [setAuthorisation] = useState(null);
 
   const handleUserSession = () => {
     console.log("handleSession called")
@@ -60,7 +60,7 @@ const App = () => {
         <Route path="/about" component={About} />
         <Route path="/login" render={() => <Login loginUser={handleSignIn} user={loggedInuser} error={errorMessage}/>}/>
         <Route path="/signup" render={() => <SignUp loginUser={handleSignUp} error={errorMessage}/>} />
-        <Route path="/add" component = {NewProject} userSession={handleUserSession} user={loggedInuser}/>
+        <Route path="/add" component = {NewProject} userSession={handleUserSession} error={errorMessage}/>
         <Route path="/project/:id" render={(props) => <ProjectDetails {...props} />}/>
         <Route path="/" component={Error404} />
       </Switch>
@@ -69,5 +69,3 @@ const App = () => {
 };
 
 export default App;
-
-// {"cookie":{"originalMaxAge":86400000,"expires":"2021-03-22T17:25:29.653Z","httpOnly":true,"path":"/"},"loggedInUser":{"_id":"6055c1419136571ddd5c1083","firstName":"Alexandra","lastName":"Westendorp","email":"alexandrawestendorp@gmail.com","password":"$2a$10$dpacsZlBPEe8dOxpb0vHAOnCD9HnudqOqbKeBUjXj6B0aGOfNNq5K","__v":0}}

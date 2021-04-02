@@ -9,7 +9,6 @@ import Container from "@material-ui/core/Container";
 import alertIcon from "../images/alert.png";
 import UseStyles from "../components/UseStyle.js";
 
-
 export default function SignIn(props) {
   const classes = UseStyles();
   const { loginUser } = props;
@@ -22,27 +21,24 @@ export default function SignIn(props) {
           Sign in
         </Typography>
         <form className={classes.form} onSubmit={loginUser}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            label="Email Address"
-            name="email"
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-          />
-            {props.error ? (
-              <div className="error-message">
-                <img src={alertIcon} alt="alert-icon" className="alert-icon" />
-                <p>{props.error}</p>
-              </div>
-            ) : null}
+          <Grid item xs={12}>
+            <TextField id="email" name="email" label="Email Address" fullWidth />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="password"
+              name="password"
+              label="Password"
+              type="password"
+              fullWidth
+            />
+          </Grid>
+          {props.error ? (
+            <div className="error-message">
+              <img src={alertIcon} alt="alert-icon" className="alert-icon" />
+              <p>{props.error}</p>
+            </div>
+          ) : null}
           <Button
             type="submit"
             fullWidth
@@ -63,4 +59,4 @@ export default function SignIn(props) {
       </div>
     </Container>
   );
-};
+}

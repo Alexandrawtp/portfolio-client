@@ -4,7 +4,8 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 
 
-const AddForm = () => {
+const AddForm = (props) => {
+  console.log(props)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -26,6 +27,7 @@ const AddForm = () => {
             name="description"
             label="Description"
             fullWidth
+            className="form-style"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

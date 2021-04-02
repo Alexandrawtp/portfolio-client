@@ -1,12 +1,12 @@
 const SecondaryColor = (theme, shape) => {
   switch (theme) {
-    case 1:
+    case "Blue":
       return `secondary-1 ${shape}`;
-    case 2:
+    case "Red":
       return `secondary-2 ${shape}`;
-    case 3:
+    case "Yellow":
       return `secondary-3 ${shape}`;
-    case 4:
+    case "Neutral":
       return `secondary-4 ${shape}`;
     default:
       return `secondary-default ${shape}`;

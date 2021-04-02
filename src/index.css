@@ -79,12 +79,27 @@ h3 {
   transition: background-color 0.5s ease-out;
 }
 
+.themeName {
+  cursor: default;
+  margin: 0 0 10px 5px;
+}
+
 .add-btn:hover {
   background-color: #ffd9c6;
 }
 
 .add-btn:focus {
   outline: 0;
+}
+
+.no-borders {
+  border: none;
+  background-color: transparent;
+}
+
+.no-borders:focus {
+  outline: 0;
+  border: none;
 }
 
 .link {
@@ -183,11 +198,15 @@ h3 {
 
 /* Theme */
 
-.color-1 {
+.color-1 { /*home*/
+  background-color: #d1ecfe;
+}
+
+.color-1:hover {
   background-color: #4fb6ff;
 }
 
-.primary-1 {
+.primary-1 { /*pres*/
   background-color: #4fb6ff;
 }
 
@@ -195,12 +214,12 @@ h3 {
   background-color: #d1ecfe;
 }
 
-.color-1:hover {
-  background-color: #129cff;
+.color-2 {
+  background-color: #f8b9b9;
 }
 
-.color-2 {
-  background-color: #114886;
+.color-2:hover {
+  background-color: #cf4545;
 }
 
 .primary-2 {
@@ -209,10 +228,6 @@ h3 {
 
 .secondary-2 {
   background-color: #f8b9b9;
-}
-
-.color-2:hover {
-  background-color: #082950;
 }
 
 .color-3 {
@@ -270,11 +285,16 @@ h3 {
   flex-wrap: wrap;
   margin: 0 20px 20px 0;
   cursor: pointer;
+  padding: 0;
 }
 
 .color-palette:hover {
   background-color: white;
   opacity: 0.6;
+}
+
+.color-palette:focus {
+  border: solid 4px #ffe9de;;
 }
 
 .left-color {

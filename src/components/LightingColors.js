@@ -1,12 +1,12 @@
 const LightingColors = (theme, shape) => {
   switch (theme) {
-    case 1:
+    case "Blue":
       return `color-1 ${shape}`;
-    case 2:
+    case "Red":
       return `color-2 ${shape}`;
-    case 3:
+    case "Yellow":
       return `color-3 ${shape}`;
-    case 4:
+    case "Neutral":
       return `color-4 ${shape}`;
     default:
       return `color-default ${shape}`;

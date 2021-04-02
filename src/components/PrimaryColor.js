@@ -1,12 +1,12 @@
 const PrimaryColor = (theme, shape) => {
   switch (theme) {
-    case 1:
+    case "Blue":
       return `primary-1 ${shape}`;
-    case 2:
+    case "Red":
       return `primary-2 ${shape}`;
-    case 3:
+    case "Yellow":
       return `primary-3 ${shape}`;
-    case 4:
+    case "Neutral":
       return `primary-4 ${shape}`;
     default:
       return `primary-default ${shape}`;

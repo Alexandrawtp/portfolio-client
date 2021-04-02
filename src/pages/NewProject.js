@@ -9,7 +9,7 @@ import config from "../config";
 export default function Form() {
   const addData = (e) => {
     e.preventDefault();
-    console.log(e.target.image);
+    console.log(e.target.backgroundColor.value);
     let name = e.target.name.value;
     let date = e.target.date.value;
     let about = e.target.about.value;
@@ -37,7 +37,7 @@ export default function Form() {
           teammates,
           githubRepo,
           image: response.data.image,
-          backgroundColor,
+          backgroundColor
         })
       )
       .catch((err) => console.log(err));

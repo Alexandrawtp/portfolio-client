@@ -18,7 +18,6 @@ const ThemeColor = () => {
       />
       <Grid item xs={12} sm={6} className="flex-container">
         <button
-          type="button"
           className="color-palette no-borders"
           onClick={() => theme("Blue")}
         >

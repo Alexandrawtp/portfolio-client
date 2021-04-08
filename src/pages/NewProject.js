@@ -2,17 +2,26 @@ import React, {useState} from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
 import ThemeColor from "../components/ThemeColor.js";
-import Button from "../components/Button.js";
+import Button from "../components/GradientButton.js";
 import axios from "axios";
 import config from "../config";
+import successIcon from "../images/successIcon.png";
 
 export default function Form(props) {
   console.log(props)
-  const [setMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const displayMessage = () =>
+    successMessage ? (
+      <div className="error-message">
+        <img src={successIcon} alt="alert-icon" className="alert-icon" />
+        <p>{successMessage.name} has been added to your projects.</p>
+      </div>
+    ) : null
+
 
   const addData = (e) => {
     e.preventDefault();
-    console.log(e.target.backgroundColor.value);
     let name = e.target.name.value;
     let date = e.target.date.value;
     let about = e.target.about.value;
@@ -42,18 +51,18 @@ export default function Form(props) {
           image: response.data.image,
           backgroundColor
         })
-        //  .then((response) => setMessage(response.data))
-        //  .catch((error) => setMessage(error.response.data.errorMessage))
+         .then((response) => setSuccessMessage(response.data))
+         .catch((error) => setSuccessMessage(error.response.data.errorMessage))
       )
       .catch((err) => console.log(err));
   };
 
   return (
     <form onSubmit={(e) => addData(e)} className="form">
-      <AddForm />
+      <AddForm successMessage={successMessage}/>
       <ThemeColor />
       <AddPicture />
-      <Button type="submit" />
+      <Button type="submit" addText="submit" onClick={() => displayMessage}/>
     </form>
   );
 }

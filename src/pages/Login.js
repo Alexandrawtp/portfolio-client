@@ -71,7 +71,6 @@ export default function SignIn(props) {
                 addText="signIn"
                 className={classes.submit}
               >
-                Sign In
               </Button>
             </Grid>
             <Grid container justify="flex-end">

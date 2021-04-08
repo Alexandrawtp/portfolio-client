@@ -17,8 +17,8 @@ const UseStyles = makeStyles((theme) => ({
     height: 38,
     padding: "0 30px",
     margin: "30px 0 30px",
-    width: "100%",
-    justifyContent: "center"
+    width: "150px",
+    justifyContent: "center", 
   },
   container: {
     display: "flex",

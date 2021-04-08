@@ -5,6 +5,7 @@ import Home from "./pages/Home.js";
 import About from "./pages/About.js";
 import NewProject from "./pages/NewProject.js";
 import ProjectDetails from "./pages/ProjectDetails.js";
+import EditForm from "./components/EditForm.js";
 import Login from "./pages/Login.js";
 import SignUp from "./pages/SignUp.js";
 import Error404 from "./pages/Error404.js";
@@ -16,7 +17,7 @@ export const UserContext = React.createContext();
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  console.log(LoggedInUser);
+  console.log(LoggedInUser)
 
   useEffect(() => {
     if (!LoggedInUser) {
@@ -56,12 +57,19 @@ const App = () => {
       .catch((error) => setErrorMessage(error.response.data.errorMessage));
   };
 
+  const handleLogout = () => {
+    axios
+      .post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
+      .then(() => setLoggedInUser(null), console.log("session deleted"))
+      .catch((err) => err, console.log("Logout failed."));
+  };
+
   return (
     <UserContext.Provider value={LoggedInUser}>
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Home onLogOut={handleLogout} />}/>
           <Route path="/about" component={About} />
           <Route
             path="/login"
@@ -72,6 +80,10 @@ const App = () => {
             render={() => <SignUp signUp={handleSignUp} error={errorMessage} />}
           />
           <Route path="/add" component={NewProject} error={errorMessage} />
+          <Route
+            path="/project/:id/edit"
+            component={EditForm}
+          />
           <Route
             path="/project/:id"
             render={(props) => <ProjectDetails {...props} />}

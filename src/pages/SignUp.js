@@ -1,6 +1,6 @@
-// import React, { useContext } from "react";
-// import { UserContext } from "../App.js";
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../App.js";
+//import React from "react";
 import Button from "../components/GradientButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -16,7 +16,7 @@ import red from "@material-ui/core/colors/red";
 export default function SignUp(props) {
   const classes = UseStyles();
   const color = red[300];
-  // const LoggedInUser = useContext(UserContext);
+  const LoggedInUser = useContext(UserContext);
 
   const theme = createMuiTheme({
     palette: {

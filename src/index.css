@@ -18,6 +18,42 @@ h3 {
   margin: 0 10%;
 }
 
+.nav-link {
+  margin-right: 20px;
+}
+
+/* Buttons */
+
+.double-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 50%;
+  height: 100%;
+}
+
+.edit-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 50%;
+  padding-top: 50%;
+}
+
+.delete-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  height: 50%;
+  padding-top: 50%;
+}
+
 .form-style {
   color: #cf4545;
 }
@@ -144,7 +180,6 @@ h3 {
 
 .home-box {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 40%;
@@ -218,6 +253,10 @@ h3 {
   background-color: #d1ecfe;
 }
 
+.color-middle-1 {
+  background-color: #aedfff;
+}
+
 .color-1:hover {
   background-color: #4fb6ff;
 }
@@ -226,36 +265,32 @@ h3 {
   background-color: #4fb6ff;
 }
 
-.secondary-1 {
-  background-color: #d1ecfe;
-}
-
 .color-2 {
   background-color: #f8b9b9;
 }
 
+.color-middle-2 {
+  background-color: #fba0a0;
+}
+
 .color-2:hover {
-  background-color: #cf4545;
+  background-color: #cb6464;
 }
 
 .primary-2 {
   background-color: #cf4545;
 }
 
-.secondary-2 {
-  background-color: #f8b9b9;
+.color-3 {
+  background-color: #ffed9c;
 }
 
-.color-3 {
-  background-color: #fee368;
+.color-middle-3 {
+  background-color: #ffe46a;
 }
 
 .primary-3 {
-  background-color: #fee368;
-}
-
-.secondary-3 {
-  background-color: #fffae1;
+  background-color: #fdd93a;
 }
 
 .color-3:hover {
@@ -263,11 +298,15 @@ h3 {
 }
 
 .color-4 {
-  background-color: rgb(243, 231, 178);
+  background-color: rgb(224, 218, 193);
+}
+
+.color-middle-4 {
+  background-color: rgb(238, 231, 203);
 }
 
 .primary-4 {
-  background-color: rgb(243, 231, 178);
+  background-color: rgb(215, 207, 170);
 }
 
 .secondary-4 {
@@ -280,6 +319,10 @@ h3 {
 
 .color-default {
   background-color: rgb(243, 231, 178);
+}
+
+.color-middle-default {
+  background-color: rgb(244, 228, 155);
 }
 
 .primary-default {

@@ -5,6 +5,8 @@ import config from "../config";
 import axios from "axios";
 import ReactTypingEffect from "react-typing-effect";
 import LightingColors from "../components/LightingColors.js";
+import ProjectBtnDelete from "../components/ProjectBtnDelete.js";
+import ProjectBtnEdit from "../components/ProjectBtnEdit.js";
 import Button from "../components/GradientButton.js";
 
 const Home = (props) => {
@@ -59,33 +61,42 @@ const Home = (props) => {
             key={index}
             className={LightingColors(project.backgroundColor, "home-box")}
           >
+            {LoggedInUser ? (
+              <div className="double-btn">
+                <button className={ProjectBtnEdit(project.backgroundColor, "edit-btn")}>
+                  <Link
+                    to={`/project/edit/${project._id}`}
+                    className="no-style-link"
+                  >
+                    Edit
+                  </Link>
+                </button>
+
+                <button
+                  type="submit"
+                  className={ProjectBtnDelete(project.backgroundColor, "delete-btn")}
+                  onClick={() => {
+                    handleDelete(project._id);
+                  }}
+                >
+                  <div>Delete</div>
+                </button>
+              </div>
+            ) : null}
             <Link
               to={`/project/${project._id}`}
               className="no-style-link text-boxes"
             >
               <h3>{project.name}</h3>
             </Link>
-            {LoggedInUser ? (
-              <div>
-                <Link to={`/project/${project._id}/edit`}>
-                  <button>Edit</button>
-                </Link>
-                <button
-                  type="submit"
-                  onClick={() => {
-                    handleDelete(project._id);
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
-            ) : null}
           </div>
         ))}
       </section>
-      <button type="submit" addText="logout" onClick={props.onLogOut}>
-        LOGOUT
-      </button>
+      {LoggedInUser ? (
+        <button type="submit" addText="logout" onClick={props.onLogOut}>
+          LOGOUT
+        </button>
+      ) : null}
     </div>
   );
 };

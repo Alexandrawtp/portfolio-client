@@ -1,6 +1,6 @@
-//import React, { useContext } from "react";
-import React from "react";
-//import { UserContext } from "../App.js";
+import React, { useContext } from "react";
+import { BrowserRouter as Redirect } from "react-router-dom";
+import { UserContext } from "../App.js";
 import Button from "../components/GradientButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -16,8 +16,7 @@ import red from "@material-ui/core/colors/red";
 export default function SignIn(props) {
   const classes = UseStyles();
   const color = red[300];
-  //const LoggedInUser = useContext(UserContext);
-  //console.log(LoggedInUser)
+  const LoggedInUser = useContext(UserContext);
 
   const theme = createMuiTheme({
     palette: {
@@ -26,6 +25,7 @@ export default function SignIn(props) {
       },
     },
   });
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -84,5 +84,5 @@ export default function SignIn(props) {
         </form>
       </div>
     </Container>
-  );
+  )
 }

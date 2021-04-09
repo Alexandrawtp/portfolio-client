@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import NavBar from "./components/NavBar.js";
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
@@ -17,12 +22,12 @@ export const UserContext = React.createContext();
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  console.log("logged in user :", LoggedInUser)
+  console.log("logged in user :", LoggedInUser);
 
   useEffect(() => {
     if (!LoggedInUser) {
       axios
-        .get(`${config.API_URL}/api/me`, {withCredentials: true})
+        .get(`${config.API_URL}/api/me`, { withCredentials: true })
         .then((response) => setLoggedInUser(response.data))
         .catch((error) => error.response.data.errorMessage);
     }
@@ -38,7 +43,7 @@ const App = () => {
     };
 
     axios
-      .post(`${config.API_URL}/api/signup`, user, {withCredentials: true})
+      .post(`${config.API_URL}/api/signup`, user, { withCredentials: true })
       .then((response) => setLoggedInUser(response.data))
       .catch((error) => setErrorMessage(error.response.data.errorMessage));
   };
@@ -52,14 +57,14 @@ const App = () => {
     };
 
     axios
-      .post(`${config.API_URL}/api/signin`, userData, {withCredentials: true})
+      .post(`${config.API_URL}/api/signin`, userData, { withCredentials: true })
       .then((response) => setLoggedInUser(response.data))
       .catch((error) => setErrorMessage(error.response.data.errorMessage));
   };
 
   const handleLogout = () => {
     axios
-      .post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
+      .post(`${config.API_URL}/api/logout`, {}, { withCredentials: true })
       .then(() => setLoggedInUser(false))
       .catch((err) => err);
   };
@@ -69,19 +74,34 @@ const App = () => {
       <Router>
         <NavBar />
         <Switch>
-          <Route exact path="/" render={() => <Home onLogOut={handleLogout} />}/>
-          <Route path="/about" component={About} />
           <Route
-            path="/login"
-            render={() => <Login onSignIn={handleSignIn} error={errorMessage} />}
+            exact
+            path="/"
+            render={() => <Home onLogOut={handleLogout} />}
           />
+          <Route path="/about" component={About} />
+          <Route path="/login">
+            {LoggedInUser ? (
+              <Redirect to="/" />
+            ) : (
+              <Login onSignIn={handleSignIn} error={errorMessage} />
+            )}
+          </Route>
           <Route
             path="/signup"
-            render={() => <SignUp onSignUp={handleSignUp} error={errorMessage} />}
+            render={() => (
+              <SignUp onSignUp={handleSignUp} error={errorMessage} />
+            )}
           />
-          <Route path="/add" component={NewProject} error={errorMessage} />
+          <Route path="/add">
+            {LoggedInUser ? (
+              <NewProject error={errorMessage} />
+            ) : (
+              <Redirect to="/login" />
+            )}
+          </Route>
           <Route
-            path="/project/:id/edit"
+            path="/project/edit/:id"
             render={(props) => <EditForm {...props} />}
           />
           <Route

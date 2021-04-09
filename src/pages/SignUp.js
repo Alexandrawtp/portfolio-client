@@ -33,7 +33,7 @@ export default function SignUp(props) {
         <Typography component="h1" variant="h5" className="form-title">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSignUp={props.onSignUp}>
         <ThemeProvider theme={theme}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

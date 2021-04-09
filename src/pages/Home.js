@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
 import config from "../config";
 import axios from "axios";
@@ -8,6 +9,7 @@ import Button from "../components/GradientButton.js";
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
+  const LoggedInUser = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -17,17 +19,18 @@ const Home = (props) => {
   }, [setProjects]);
 
   const handleDelete = (id) => {
-    axios.delete(`${config.API_URL}/api/project/${id}/delete`)
-    .then(() => {
-       let filteredProjects = projects.filter((project) => {
-         return project._id !== id
-       })
-       setProjects(filteredProjects)
-   })
-   .catch((err) => {
-     console.log('Delete failed', err)
-   })
-  }
+    axios
+      .delete(`${config.API_URL}/api/project/delete/${id}`)
+      .then(() => {
+        let filteredProjects = projects.filter((project) => {
+          return project._id !== id;
+        });
+        setProjects(filteredProjects);
+      })
+      .catch((err) => {
+        console.log("Delete failed", err);
+      });
+  };
 
   return (
     <div>
@@ -62,24 +65,27 @@ const Home = (props) => {
             >
               <h3>{project.name}</h3>
             </Link>
-            <Link to={`/project/${project._id}/edit`}>
-              <button>Edit</button>
-            </Link>
-            <button
-              onClick={() => {
-                handleDelete(project._id);
-              }}
-            >
-              Delete
-            </button>
+            {LoggedInUser ? (
+              <div>
+                <Link to={`/project/${project._id}/edit`}>
+                  <button>Edit</button>
+                </Link>
+                <button
+                  type="submit"
+                  onClick={() => {
+                    handleDelete(project._id);
+                  }}
+                >
+                  Delete
+                </button>
+              </div>
+            ) : null}
           </div>
         ))}
       </section>
-      <Button
-        type="submit"
-        addText="logout"
-        onClick={props.onLogOut}
-      ></Button>
+      <button type="submit" addText="logout" onClick={props.onLogOut}>
+        LOGOUT
+      </button>
     </div>
   );
 };

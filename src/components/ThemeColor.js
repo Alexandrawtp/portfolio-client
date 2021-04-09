@@ -31,11 +31,17 @@ const ThemeColor = () => {
           <div className="left-color secondary-2"></div>
           <div className="right-color primary-2"></div>
         </button>
-        <button className="color-palette no-borders" onClick={() => theme("Yellow")}>
+        <button
+          className="color-palette no-borders"
+          onClick={() => theme("Yellow")}
+        >
           <div className="left-color secondary-3"></div>
           <div className="right-color primary-3"></div>
         </button>
-        <button className="color-palette no-borders" onClick={() => theme("Neutral")}>
+        <button
+          className="color-palette no-borders"
+          onClick={() => theme("Neutral")}
+        >
           <div className="left-color secondary-4"></div>
           <div className="right-color primary-4"></div>
         </button>

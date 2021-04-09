@@ -15,16 +15,16 @@ import config from "./config";
 export const UserContext = React.createContext();
 
 const App = () => {
-  const [LoggedInUser, setLoggedInUser] = useState(null);
+  const [LoggedInUser, setLoggedInUser] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  console.log(LoggedInUser)
+  console.log("logged in user :", LoggedInUser)
 
   useEffect(() => {
     if (!LoggedInUser) {
       axios
         .get(`${config.API_URL}/api/me`, {withCredentials: true})
         .then((response) => setLoggedInUser(response.data))
-        .catch((error) => console.log(error.response.data.errorMessage));
+        .catch((error) => error.response.data.errorMessage);
     }
   }, [LoggedInUser, setLoggedInUser]);
 
@@ -60,8 +60,8 @@ const App = () => {
   const handleLogout = () => {
     axios
       .post(`${config.API_URL}/api/logout`, {}, {withCredentials: true})
-      .then(() => setLoggedInUser(null), console.log("session deleted"))
-      .catch((err) => err, console.log("Logout failed."));
+      .then(() => setLoggedInUser(false))
+      .catch((err) => err);
   };
 
   return (
@@ -77,12 +77,12 @@ const App = () => {
           />
           <Route
             path="/signup"
-            render={() => <SignUp signUp={handleSignUp} error={errorMessage} />}
+            render={() => <SignUp onSignUp={handleSignUp} error={errorMessage} />}
           />
           <Route path="/add" component={NewProject} error={errorMessage} />
           <Route
             path="/project/:id/edit"
-            component={EditForm}
+            render={(props) => <EditForm {...props} />}
           />
           <Route
             path="/project/:id"

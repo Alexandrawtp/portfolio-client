@@ -8,7 +8,6 @@ import config from "../config";
 import successIcon from "../images/successIcon.png";
 
 export default function Form(props) {
-  console.log(props)
   const [successMessage, setSuccessMessage] = useState("");
 
   const displayMessage = () =>

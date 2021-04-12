@@ -1,53 +1,16 @@
-import React, { useState } from "react";
-import Grid from "@material-ui/core/Grid";
-
-const ThemeColor = () => {
-  const [selectedTheme, setSelectedTheme] = useState(null);
-
-  const theme = (themeNumber) => setSelectedTheme(themeNumber);
-
-  return (
-    <>
-      <b className="grey flex-container">Theme Colors</b>
-      <input
-        type="button"
-        name="backgroundColor"
-        value={selectedTheme}
-        className="no-borders themeName"
-        readonly
-      />
-      <Grid item xs={12} sm={6} className="flex-container">
-        <button
-          className="color-palette no-borders"
-          onClick={() => theme("Blue")}
-        >
-          <div className="left-color color-middle-1"></div>
-          <div className="right-color primary-1"></div>
-        </button>
-        <button
-          className="color-palette no-borders"
-          onClick={() => theme("Red")}
-        >
-          <div className="left-color color-middle-2"></div>
-          <div className="right-color primary-2"></div>
-        </button>
-        <button
-          className="color-palette no-borders"
-          onClick={() => theme("Yellow")}
-        >
-          <div className="left-color color-middle-3"></div>
-          <div className="right-color primary-3"></div>
-        </button>
-        <button
-          className="color-palette no-borders"
-          onClick={() => theme("Neutral")}
-        >
-          <div className="left-color color-middle-4"></div>
-          <div className="right-color primary-4"></div>
-        </button>
-      </Grid>
-    </>
-  );
+const ThemeColor = (theme, shape) => {
+  switch (theme) {
+    case "Blue":
+      return `color-1 ${shape}`;
+    case "Red":
+      return `color-2 ${shape}`;
+    case "Yellow":
+      return `color-3 ${shape}`;
+    case "Neutral":
+      return `color-4 ${shape}`;
+    default:
+      return `color-default ${shape}`;
+  }
 };
 
 export default ThemeColor;

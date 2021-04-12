@@ -3,11 +3,9 @@ import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
 import config from "../config";
 import axios from "axios";
-import ReactTypingEffect from "react-typing-effect";
-import LightingColors from "../components/LightingColors.js";
+import ThemeColor from "../components/PaletteColors.js";
 import ProjectBtnDelete from "../components/ProjectBtnDelete.js";
 import ProjectBtnEdit from "../components/ProjectBtnEdit.js";
-import Button from "../components/GradientButton.js";
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
@@ -36,50 +34,22 @@ const Home = (props) => {
 
   return (
     <div>
-      <ReactTypingEffect
-        text={["Welcome to my portfolio"]}
-        cursor="_"
-        cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-        speed={80}
-        typingDelay={100}
-        eraseDelay={100000}
-        className="centered-content"
-        displayTextRenderer={(text, i) => {
-          return (
-            <h1>
-              {text.split("").map((char, i) => {
-                const key = `${i}`;
-                return <span key={key}>{char}</span>;
-              })}
-            </h1>
-          );
-        }}
-      />
-      <section className="projects-group">
+      <h1>Welcome to my portfolio</h1>
+      <section>
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className={LightingColors(project.backgroundColor, "home-box")}
-          >
+          <div key={index}>
             {LoggedInUser ? (
-              <div className="double-btn">
-                <button className={ProjectBtnEdit(project.backgroundColor, "edit-btn")}>
-                  <Link
-                    to={`/project/edit/${project._id}`}
-                    className="no-style-link"
-                  >
-                    Edit
-                  </Link>
+              <div>
+                <button>
+                  <Link to={`/project/edit/${project._id}`}>Edit</Link>
                 </button>
-
                 <button
                   type="submit"
-                  className={ProjectBtnDelete(project.backgroundColor, "delete-btn")}
                   onClick={() => {
                     handleDelete(project._id);
                   }}
                 >
-                  <div>Delete</div>
+                  Delete
                 </button>
               </div>
             ) : null}

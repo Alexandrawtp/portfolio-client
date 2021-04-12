@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
-import ThemeColor from "../components/ThemeColor.js";
+import ThemeColor from "../components/PaletteColors.js";
 import Button from "../components/GradientButton.js";
 import axios from "axios";
 import config from "../config";

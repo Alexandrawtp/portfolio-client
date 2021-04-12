@@ -1,43 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Poppins:wght@600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
 }
+
+/* General setup */
 
 .navBar {
   display: flex;
-  padding: 20px 50px;
   justify-content: flex-end;
+  padding: 20px;
 }
 
-.nav-link {
-  margin-right: 20px;
+.nav-element {
+  z-index: 2;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
 }
 
 h1 {
-  margin: 0 0 50px;
+  margin: 0;
   font-weight: 300;
+  font-size: 40px;
+  font-family: "Poppins";
+  color: rgb(31, 26, 64);
+}
+
+h2 {
+  font-weight: 200;
+  margin: 20px;
+  font-size: 15px;
 }
 
 h3 {
-  font-weight: 300;
+  font-weight: 200;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.left-side {
+  display: flex;
+  margin: 40px;
+  flex-direction: column;
+  color: rgb(60, 67, 78);
+  width: 280px;
+}
+
+.on-top {
+  position: relative;
+  z-index: 2;
 }
 
 .no-style-link {
   text-decoration: none;
-  color: black;
   z-index: 2;
+}
+
+.colored-separator {
+  margin: 15px;
 }
 
 .horizontally-align {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   margin: 40px 0;
+}
+
+/* Home */
+
+.gradient-background {
+  background: linear-gradient(360deg, rgba(255, 255, 255, 0.945) 29%, rgb(248, 137, 141) 55%, rgb(122, 152, 222) 100%);
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 50px;
+}
+
+.section-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 600px;
+}
+
+.technologies {
+  width: 350px;
+  padding: 10px 0;
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px 2px rgb(227, 234, 236);
+  text-align: center;
+}
+
+.logo-tech {
+  width: 60px;
+  margin: 12px;
 }
 
 /* Add */

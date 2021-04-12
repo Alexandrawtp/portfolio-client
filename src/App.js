@@ -16,6 +16,7 @@ import SignUp from "./pages/SignUp.js";
 import Error404 from "./pages/Error404.js";
 import axios from "axios";
 import config from "./config";
+import Projects from "./components/Projects"
 
 export const UserContext = React.createContext();
 
@@ -107,6 +108,10 @@ const App = () => {
           <Route
             path="/project/:id"
             render={(props) => <ProjectDetails {...props} />}
+          />
+          <Route
+            path="/projects"
+            component={Projects}
           />
           <Route path="/" component={Error404} />
         </Switch>

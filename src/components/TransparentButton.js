@@ -13,23 +13,23 @@ const btnText = (text) => {
       return "sign up";
     case "logout":
       return "log out";
-    case "projects":
-      return "projects";
+    case "contactMe":
+      return "contact me";
     default:
       return "submit";
   }
 };
 
-const GradientButton = (props) => {
+const TransparentButton = (props) => {
   let text = props.addText;
   const classes = UseStyles();
   return (
     <Grid container justify="center" width="100%">
-      <Button className={classes.root} type="submit">
+      <Button className={classes.transparentButton} type="submit">
         {btnText(text)}
       </Button>
     </Grid>
   );
 };
 
-export default GradientButton;
+export default TransparentButton;

@@ -3,9 +3,16 @@ import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
 import config from "../config";
 import axios from "axios";
-import ThemeColor from "../components/PaletteColors.js";
-import ProjectBtnDelete from "../components/ProjectBtnDelete.js";
-import ProjectBtnEdit from "../components/ProjectBtnEdit.js";
+import GradientButton from "../components/GradientButton.js";
+import TransparentButton from "../components/TransparentButton.js";
+import MaterialUI from "../images/material-ui.png";
+import Javascript from "../images/js.png";
+import NodeJS from "../images/node.png";
+import ReactJS from "../images/react.jpeg";
+import MongoDB from "../images/mongo-db.gif";
+import html5 from "../images/html-5.png";
+import css3 from "../images/css-3.png";
+import ThemeColor from "../components/ThemeColor.js";
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
@@ -34,8 +41,31 @@ const Home = (props) => {
 
   return (
     <div>
-      <h1>Welcome to my portfolio</h1>
-      <section>
+      <section className="gradient-background"></section>
+      <div className="on-top section-1">
+        <div className="left-side">
+          <h1>Welcome to my portfolio</h1>
+          <p>My name is Alexandra, and I am a full-stack web developer.</p>
+          <div className="horizontally-align">
+            <Link to={"/projects"} className="no-style-link">
+              <GradientButton addText="projects"></GradientButton>
+            </Link>
+            <Link to={"/about"} className="no-style-link">
+              <TransparentButton addText="contactMe"></TransparentButton>
+            </Link>
+          </div>
+        </div>
+        <div className="technologies">
+            <img src={Javascript} alt="tech-logo" className="logo-tech"></img>
+            <img src={ReactJS} alt="tech-logo" className="logo-tech"></img>
+            <img src={NodeJS} alt="tech-logo" className="logo-tech"></img>
+            <img src={MongoDB} alt="tech-logo" className="logo-tech"></img>
+            <img src={html5} alt="tech-logo" className="logo-tech"></img>
+            <img src={css3} alt="tech-logo" className="logo-tech"></img>
+            <img src={MaterialUI} alt="tech-logo" className="logo-tech"></img>
+        </div>
+      </div>
+      <section className="projects">
         {projects.map((project, index) => (
           <div key={index}>
             {LoggedInUser ? (
@@ -53,12 +83,12 @@ const Home = (props) => {
                 </button>
               </div>
             ) : null}
-            <Link
-              to={`/project/${project._id}`}
-              className="no-style-link text-boxes"
-            >
-              <h3>{project.name}</h3>
-            </Link>
+            <div className="projects">
+              <Link to={`/project/${project._id}`} className="no-style-link">
+                <h2>{project.name}</h2>
+                <hr className={ThemeColor(project.backgroundColor, "colored-separator")}></hr>
+              </Link>
+            </div>
           </div>
         ))}
       </section>

@@ -3,8 +3,7 @@ import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
 import config from "../config";
 import axios from "axios";
-import GradientButton from "../components/GradientButton.js";
-import TransparentButton from "../components/TransparentButton.js";
+import PurpleButton from "../components/PurpleButton.js";
 import MaterialUI from "../images/material-ui.png";
 import Javascript from "../images/js.png";
 import NodeJS from "../images/node.png";
@@ -43,15 +42,15 @@ const Home = (props) => {
     <div>
       <section className="gradient-background"></section>
       <div className="on-top section-1">
-        <div className="left-side">
+        <div className="side">
           <h1>Welcome to my portfolio</h1>
-          <p>My name is Alexandra, and I am a full-stack web developer.</p>
-          <div className="horizontally-align">
+          <p className="grey-text">My name is Alexandra, and I am a full-stack web developer.</p>
+          <div className="horizontally-align double-buttons">
             <Link to={"/projects"} className="no-style-link">
-              <GradientButton addText="projects"></GradientButton>
+              <PurpleButton addText="projects"></PurpleButton>
             </Link>
-            <Link to={"/about"} className="no-style-link">
-              <TransparentButton addText="contactMe"></TransparentButton>
+            <Link to={"/about"} className="no-style-link link">
+              Contact me
             </Link>
           </div>
         </div>

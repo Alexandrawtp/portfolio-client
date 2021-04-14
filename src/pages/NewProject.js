@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
 import ThemeColor from "../components/PaletteColors.js";
-import Button from "../components/GradientButton.js";
+import PurpleButton from "../components/PurpleButton.js";
 import axios from "axios";
 import config from "../config";
 import successIcon from "../images/successIcon.png";
@@ -61,7 +61,7 @@ export default function Form(props) {
       <AddForm successMessage={successMessage}/>
       <ThemeColor />
       <AddPicture />
-      <Button type="submit" addText="submit" onClick={() => displayMessage}/>
+      <PurpleButton type="submit" addText="submit" onClick={() => displayMessage}/>
     </form>
   );
 }

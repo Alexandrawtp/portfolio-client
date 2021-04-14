@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App.js";
 //import React from "react";
-import Button from "../components/GradientButton.js";
+import PurpleButton from "../components/PurpleButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -85,7 +85,7 @@ export default function SignUp(props) {
               ) : null}
             </div>
           </Grid>
-          <Button
+          <PurpleButton
             type="submit"
             fullWidth
             variant="contained"
@@ -93,7 +93,7 @@ export default function SignUp(props) {
             className={classes.submit}
           >
             Sign Up
-          </Button>
+          </PurpleButton>
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="/login" variant="body2" className="link">

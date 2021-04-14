@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Redirect } from "react-router-dom";
 import { UserContext } from "../App.js";
-import Button from "../components/GradientButton.js";
+import PurpleButton from "../components/PurpleButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -64,14 +64,14 @@ export default function SignIn(props) {
               </div>
             ) : null}
             <Grid container justify="center" width="100%">
-              <Button
+              <PurpleButton
                 type="submit"
                 fullWidth
                 variant="contained"
                 addText="signIn"
                 className={classes.submit}
               >
-              </Button>
+              </PurpleButton>
             </Grid>
             <Grid container justify="flex-end">
               <Grid item>

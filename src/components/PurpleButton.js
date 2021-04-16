@@ -13,8 +13,8 @@ const btnText = (text) => {
       return "sign up";
     case "logout":
       return "log out";
-    case "projects":
-      return "projects";
+    case "discover projects":
+      return "Discover projects";
     default:
       return "submit";
   }

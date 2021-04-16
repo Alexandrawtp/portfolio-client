@@ -1,8 +1,10 @@
 import React from "react";
+import NavBar from "../components/NavBar.js";
 
 const About = () => {
   return (
     <section>
+    <NavBar />
       <h3>Contact</h3>
       <p>Email: alexandrawestendorp@gmail.com</p>
       <a

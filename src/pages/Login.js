@@ -12,6 +12,7 @@ import alertIcon from "../images/alert.png";
 import UseStyles from "../components/UseStyle.js";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import red from "@material-ui/core/colors/red";
+import NavBar from "../components/NavBar.js";
 
 export default function SignIn(props) {
   const classes = UseStyles();
@@ -28,6 +29,8 @@ export default function SignIn(props) {
 
 
   return (
+    <>
+    <NavBar />
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -84,5 +87,6 @@ export default function SignIn(props) {
         </form>
       </div>
     </Container>
+    </>
   )
 }

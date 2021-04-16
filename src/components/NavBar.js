@@ -12,9 +12,6 @@ const NavBar = () => {
           <h3>Add </h3>
         </Link>
       ) : null}
-      <Link to="/projects" className="nav-element">
-        <h3>Projects</h3>
-      </Link>
       <Link to="/about" className="nav-element">
         <h3>About</h3>
       </Link>

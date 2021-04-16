@@ -1,3 +1,5 @@
 import React from "react";
-const Error404 = () => <div>This page doesn't exist.</div>;
+import NavBar from "../components/NavBar.js";
+
+const Error404 = () => <div><NavBar />This page doesn't exist.</div>;
 export default Error404;

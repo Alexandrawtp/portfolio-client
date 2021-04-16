@@ -11,7 +11,7 @@ import ReactJS from "../images/react.jpeg";
 import MongoDB from "../images/mongo-db.gif";
 import html5 from "../images/html-5.png";
 import css3 from "../images/css-3.png";
-import ThemeColor from "../components/ThemeColor.js";
+import NavBar from "../components/NavBar";
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
@@ -38,35 +38,34 @@ const Home = (props) => {
       });
   };
 
+  if (!projects) {
+    return <></>;
+  }
+
   return (
     <div>
-      <section className="gradient-background"></section>
       <div className="on-top section-1">
-        <div className="side">
-          <h1>Welcome to my portfolio</h1>
-          <p className="grey-text">My name is Alexandra, and I am a full-stack web developer.</p>
-          <div className="horizontally-align double-buttons">
-            <Link to={"/projects"} className="no-style-link">
-              <PurpleButton addText="projects"></PurpleButton>
-            </Link>
-            <Link to={"/about"} className="no-style-link link">
-              Contact me
-            </Link>
+        <section className="css-selector">
+          <NavBar />
+          <div className="project-header">
+            <h1>
+              Welcome ! My name is Alexandra, and I am a full stack web
+              developer.
+            </h1>
+            <div className="horizontally-align double-buttons">
+            <a href="#projects" className="no-style-link">
+              <PurpleButton addText="discover projects"></PurpleButton>
+                </a>
+              <Link to={"/about"} className="no-style-link link">
+                  Contact me
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="technologies">
-            <img src={Javascript} alt="tech-logo" className="logo-tech"></img>
-            <img src={ReactJS} alt="tech-logo" className="logo-tech"></img>
-            <img src={NodeJS} alt="tech-logo" className="logo-tech"></img>
-            <img src={MongoDB} alt="tech-logo" className="logo-tech"></img>
-            <img src={html5} alt="tech-logo" className="logo-tech"></img>
-            <img src={css3} alt="tech-logo" className="logo-tech"></img>
-            <img src={MaterialUI} alt="tech-logo" className="logo-tech"></img>
-        </div>
+        </section>
       </div>
-      <section className="projects">
+      <section className="horizontally-align project-bloc" id="projects">
         {projects.map((project, index) => (
-          <div key={index}>
+          <span key={index} className="home-group-project">
             {LoggedInUser ? (
               <div>
                 <button>
@@ -82,14 +81,61 @@ const Home = (props) => {
                 </button>
               </div>
             ) : null}
-            <div className="projects">
-              <Link to={`/project/${project._id}`} className="no-style-link">
-                <h2>{project.name}</h2>
-                <hr className={ThemeColor(project.backgroundColor, "colored-separator")}></hr>
-              </Link>
-            </div>
-          </div>
+            <Link to={`/project/${project._id}`} className="no-style-link">
+              {project.name === "Fabienne Fiacre" ? (
+                <video controls autoPlay loop muted className="video-project">
+                  <source src={project.video} type="video/mp4"></source>
+                  Your browser does not support HTML video tag
+                </video>
+              ) : project.name === "Fish Fighter" ? (
+                <img
+                  src={project.image}
+                  alt="project"
+                  className="home-project"
+                />
+              ) : (
+                <img
+                  src={project.image}
+                  alt="project"
+                  className="home-project"
+                />
+              )}
+            </Link>
+          </span>
         ))}
+      </section>
+      <section>
+        <h2>TECHNOLOGIES</h2>
+        <div className="technologies">
+          <div className="one-tech">
+            <img src={Javascript} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">Javascript ES6</div>
+          </div>
+          <div className="one-tech">
+            <img src={ReactJS} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">React</div>
+          </div>
+          <div className="one-tech">
+            <img src={NodeJS} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">NodeJS</div>
+          </div>
+          <div className="one-tech">
+            <img src={MongoDB} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">MongoDB</div>
+          </div>
+          <div className="one-tech">
+            <img src={html5} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">HTML5</div>
+          </div>
+          <div className="one-tech">
+            <img src={css3} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">CSS3</div>
+          </div>
+          <div className="one-tech">
+            <img src={MaterialUI} alt="tech-logo" className="logo-tech"></img>
+            <div className="tech-title">Material UI</div>
+          </div>
+        </div>
       </section>
       {LoggedInUser ? (
         <button type="submit" addText="logout" onClick={props.onLogOut}>

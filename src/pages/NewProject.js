@@ -6,6 +6,7 @@ import PurpleButton from "../components/PurpleButton.js";
 import axios from "axios";
 import config from "../config";
 import successIcon from "../images/successIcon.png";
+import NavBar from "../components/NavBar.js";
 
 export default function Form(props) {
   const [successMessage, setSuccessMessage] = useState("");
@@ -57,11 +58,14 @@ export default function Form(props) {
   };
 
   return (
+    <>
+    <NavBar />
     <form onSubmit={(e) => addData(e)} className="form">
       <AddForm successMessage={successMessage}/>
       <ThemeColor />
       <AddPicture />
       <PurpleButton type="submit" addText="submit" onClick={() => displayMessage}/>
     </form>
+    </>
   );
 }

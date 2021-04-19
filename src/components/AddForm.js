@@ -3,10 +3,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import red from "@material-ui/core/colors/red";
+import blue from "@material-ui/core/colors/blue";
 
-const AddForm = (props) => {
-  const color = red[300];
+const AddForm = () => {
+  const color = blue[600];
 
   const theme = createMuiTheme({
     palette: {
@@ -22,7 +22,7 @@ const AddForm = (props) => {
         <Typography variant="h6" gutterBottom>
           New project
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
             <TextField id="name" name="name" label="Name" fullWidth />
           </Grid>

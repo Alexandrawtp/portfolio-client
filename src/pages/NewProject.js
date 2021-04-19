@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
-import ThemeColor from "../components/PaletteColors.js";
 import PurpleButton from "../components/PurpleButton.js";
 import axios from "axios";
 import config from "../config";
@@ -62,7 +61,6 @@ export default function Form(props) {
     <NavBar />
     <form onSubmit={(e) => addData(e)} className="form">
       <AddForm successMessage={successMessage}/>
-      <ThemeColor />
       <AddPicture />
       <PurpleButton type="submit" addText="submit" onClick={() => displayMessage}/>
     </form>

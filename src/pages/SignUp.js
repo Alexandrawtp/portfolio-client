@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { UserContext } from "../App.js";
-//import React from "react";
+import React from "react";
 import PurpleButton from "../components/PurpleButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -11,13 +9,12 @@ import Container from "@material-ui/core/Container";
 import alertIcon from "../images/alert.png";
 import UseStyles from "../components/UseStyle";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import red from "@material-ui/core/colors/red";
+import blue from "@material-ui/core/colors/blue";
 import NavBar from "../components/NavBar.js";
 
 export default function SignUp(props) {
   const classes = UseStyles();
-  const color = red[300];
-  const LoggedInUser = useContext(UserContext);
+  const color = blue[600];
 
   const theme = createMuiTheme({
     palette: {

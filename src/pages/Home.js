@@ -11,7 +11,10 @@ import ReactJS from "../images/react.jpeg";
 import MongoDB from "../images/mongo-db.gif";
 import html5 from "../images/html-5.png";
 import css3 from "../images/css-3.png";
-import NavBar from "../components/NavBar";
+import NavBarWhite from "../components/NavBarWhite";
+import chevronR from "../images/chevron.png";
+import DeleteButton from "../components/DeleteButton";
+import EditButton from "../components/EditButton";
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
@@ -46,18 +49,18 @@ const Home = (props) => {
     <div>
       <div className="on-top section-1">
         <section className="css-selector">
-          <NavBar />
+          <NavBarWhite />
           <div className="project-header">
-            <h1>
+            <div className="title-home">
               Welcome ! My name is Alexandra, and I am a full stack web
               developer.
-            </h1>
+            </div>
             <div className="horizontally-align double-buttons">
             <a href="#projects" className="no-style-link">
               <PurpleButton addText="discover projects"></PurpleButton>
                 </a>
-              <Link to={"/about"} className="no-style-link link">
-                  Contact me
+              <Link to={"/about"} className="no-style-link white-link">
+                  Contact me <img src={chevronR} alt="chevron" width="25px"/>
               </Link>
             </div>
           </div>
@@ -68,22 +71,21 @@ const Home = (props) => {
           <span key={index} className="home-group-project">
             {LoggedInUser ? (
               <div>
-                <button>
+                <EditButton>
                   <Link to={`/project/edit/${project._id}`}>Edit</Link>
-                </button>
-                <button
+                </EditButton>
+                <DeleteButton
                   type="submit"
                   onClick={() => {
                     handleDelete(project._id);
                   }}
                 >
-                  Delete
-                </button>
+                </DeleteButton>
               </div>
             ) : null}
             <Link to={`/project/${project._id}`} className="no-style-link">
               {project.name === "Fabienne Fiacre" ? (
-                <video controls autoPlay loop muted className="video-project">
+                <video controls autoPlay loop muted className="video-project home-shadow">
                   <source src={project.video} type="video/mp4"></source>
                   Your browser does not support HTML video tag
                 </video>
@@ -104,7 +106,7 @@ const Home = (props) => {
           </span>
         ))}
       </section>
-      <section>
+      <section className="tech-section">
         <h2>TECHNOLOGIES</h2>
         <div className="technologies">
           <div className="one-tech">

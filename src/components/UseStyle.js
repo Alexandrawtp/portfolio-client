@@ -9,7 +9,7 @@ const UseStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   root: {
-    background: 'rgb(70, 162, 255)',
+    background: '#0066FF',
     borderRadius: 40,
     border: 0,
     color: 'white',
@@ -18,18 +18,11 @@ const UseStyles = makeStyles((theme) => ({
     textTransform: 'capitalize',
     margin: "10px 30px 10px 0",
     "&:hover": {
-      backgroundColor: "rgb(70, 162, 255)"
+    backgroundColor: "#3385ff"
   }
   },
-  transparentButton: {
-    background: 'transparent',
-    borderRadius: 3,
-    border: 0,
-    color: 'black',
-    height: 48,
-    padding: '0 30px',
-    textTransform: 'capitalize',
-    marginTop: 20,
+  button: {
+    margin: theme.spacing(1),
   },
   container: {
     display: "flex",

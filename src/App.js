@@ -21,13 +21,12 @@ export const UserContext = React.createContext();
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  console.log("logged in user :", LoggedInUser);
 
   useEffect(() => {
     if (!LoggedInUser) {
       axios
         .get(`${config.API_URL}/api/me`, { withCredentials: true })
-        .then((response) => setLoggedInUser(response.data))
+        .then((response) => {console.log(response); setLoggedInUser(response.data)})
         .catch((error) => error.response.data.errorMessage);
     }
   }, [LoggedInUser, setLoggedInUser]);

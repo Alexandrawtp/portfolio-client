@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import UploadButtons from "../components/UploadButtons.js";
+import AddRoundedIcon from "@material-ui/icons/AddRounded";
 
 const AddPicture = () => {
 
@@ -9,7 +9,7 @@ const AddPicture = () => {
       <b className="grey flex-container">Pictures</b>
       <Grid className="flex-container">
         <Grid item xs={12} sm={6} className="horizontally-align">
-        <UploadButtons />
+        <button type="button" className="add-btn"><AddRoundedIcon /></button>
           <input
             name="image"
             type="file"

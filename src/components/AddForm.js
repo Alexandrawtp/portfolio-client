@@ -24,49 +24,28 @@ const AddForm = () => {
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <TextField id="name" name="name" label="Name" fullWidth />
+            <TextField name="name" label="Name" fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField id="date" name="date" label="Date" fullWidth />
+            <TextField name="date" label="Date" fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField id="about" name="about" label="About" fullWidth />
+            <TextField name="about" label="About" fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              id="description"
-              name="description"
-              label="Description"
-              fullWidth
-              className="form-style"
-            />
+            <TextField name="description" label="Description" fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField id="url" name="url" label="Url" fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="teammates"
-              name="teammates"
-              label="Teammates"
-              fullWidth
-            />
+            <TextField name="teammates" label="Teammates" fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="technologies"
-              name="technologies"
-              label="Technologies"
-              fullWidth
-            />
+            <TextField name="technologies" label="Technologies" fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              id="githubRepo"
-              name="githubRepo"
-              label="Github Repository"
-              fullWidth
-            />
+            <TextField name="githubRepo" label="Github Repository" fullWidth />
           </Grid>
         </Grid>
       </React.Fragment>

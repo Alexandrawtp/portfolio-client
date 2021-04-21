@@ -1,23 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
 import PurpleButton from "../components/PurpleButton.js";
 import axios from "axios";
 import config from "../config";
-import successIcon from "../images/successIcon.png";
 import NavBar from "../components/NavBar.js";
 
 export default function Form(props) {
-  const [successMessage, setSuccessMessage] = useState("");
-
-  const displayMessage = () =>
-    successMessage ? (
-      <div className="error-message">
-        <img src={successIcon} alt="alert-icon" className="alert-icon" />
-        <p>{successMessage.name} has been added to your projects.</p>
-      </div>
-    ) : null
-
 
   const addData = (e) => {
     e.preventDefault();
@@ -30,40 +19,38 @@ export default function Form(props) {
     let teammates = e.target.teammates.value;
     let githubRepo = e.target.githubRepo.value;
     let image = e.target.image.files[0];
-    let backgroundColor = e.target.backgroundColor.value;
 
     let uploadForm = new FormData();
     uploadForm.append("imageUrl", image);
 
     axios
       .post(`${config.API_URL}/api/upload`, uploadForm)
-      .then((response) =>
-        axios.post(`${config.API_URL}/api/create`, {
-          name,
-          date,
-          about,
-          description,
-          technologies,
-          url,
-          teammates,
-          githubRepo,
-          image: response.data.image,
-          backgroundColor
-        })
-         .then((response) => setSuccessMessage(response.data))
-         .catch((error) => setSuccessMessage(error.response.data.errorMessage))
+      .then(() =>
+        axios
+          .post(`${config.API_URL}/api/create`, {
+            name,
+            date,
+            about,
+            description,
+            technologies,
+            url,
+            teammates,
+            githubRepo,
+          })
+          .then((response) => response.data)
+          .catch((error) => error.response.data.errorMessage)
       )
       .catch((err) => console.log(err));
   };
 
   return (
     <>
-    <NavBar />
-    <form onSubmit={(e) => addData(e)} className="form">
-      <AddForm successMessage={successMessage}/>
-      <AddPicture />
-      <PurpleButton type="submit" addText="submit" onClick={() => displayMessage}/>
-    </form>
+      <NavBar />
+      <form onSubmit={(e) => addData(e)} className="form">
+        <AddForm  />
+        <AddPicture />
+        <PurpleButton type="submit" addText="submit" />
+      </form>
     </>
   );
 }

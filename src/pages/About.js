@@ -1,6 +1,6 @@
 import React from "react";
 import NavBarWhite from "../components/NavBarWhite.js";
-import photoid from "../images/photoid.png"
+import photoid from "../images/photoid.png";
 
 const About = () => {
   return (
@@ -29,7 +29,7 @@ const About = () => {
       </div>
       <div className="horizontally-align about-group">
         <div className="contact-group vertically-align">
-          <h4>Email</h4>
+          <h3>Email</h3>
           <a
             className="email no-style-link"
             href="mailto: alexandrawestendorp@gmail.com"
@@ -38,7 +38,7 @@ const About = () => {
           </a>
         </div>
         <div className="contact-group vertically-align">
-          <h4>Linkedin</h4>
+          <h3>Linkedin</h3>
           <a
             href="https://www.linkedin.com/in/alexandra-westendorp/"
             target="_blank"
@@ -53,7 +53,7 @@ const About = () => {
           </a>
         </div>
         <div className="contact-group vertically-align">
-          <h4>Github</h4>
+          <h3>Github</h3>
           <a
             href="https://github.com/Alexandrawtp"
             target="_blank"

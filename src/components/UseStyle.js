@@ -1,8 +1,16 @@
 import {
   makeStyles,
 } from '@material-ui/core/styles';
+import blue from "@material-ui/core/colors/blue";
+const color = blue[600];
+
 
 const UseStyles = makeStyles((theme) => ({
+  palette: {
+    primary: {
+      main: color,
+    },
+  },
   paper: {
     margin: theme.spacing(2),
     display: "flex",

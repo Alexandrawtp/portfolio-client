@@ -4,21 +4,28 @@ import { Link } from "react-router-dom";
 import config from "../config";
 import axios from "axios";
 import PurpleButton from "../components/PurpleButton.js";
-import MaterialUI from "../images/material-ui.png";
-import Javascript from "../images/js.png";
-import NodeJS from "../images/node.png";
-import ReactJS from "../images/react.jpeg";
-import MongoDB from "../images/mongo-db.gif";
-import html5 from "../images/html-5.png";
-import css3 from "../images/css-3.png";
 import NavBarWhite from "../components/NavBarWhite";
 import chevronR from "../images/chevron.png";
-import DeleteButton from "../components/DeleteButton";
-import EditButton from "../components/EditButton";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+import UseStyle from "../components/UseStyle";
+import Technologies from "../components/Technologies";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Home = (props) => {
   const [projects, setProjects] = useState([]);
   const LoggedInUser = useContext(UserContext);
+  const classes = UseStyle();
+  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
     axios
@@ -41,6 +48,19 @@ const Home = (props) => {
       });
   };
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleCloseAndDelete = (projectId) => {
+    setOpen(false);
+    handleDelete(projectId);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   if (!projects) {
     return <></>;
   }
@@ -56,11 +76,11 @@ const Home = (props) => {
               developer.
             </div>
             <div className="horizontally-align double-buttons">
-            <a href="#projects" className="no-style-link">
-              <PurpleButton addText="discover projects"></PurpleButton>
-                </a>
+              <a href="#projects" className="no-style-link">
+                <PurpleButton addText="discover projects"></PurpleButton>
+              </a>
               <Link to={"/about"} className="no-style-link white-link">
-                  Contact me <img src={chevronR} alt="chevron" width="25px"/>
+                Contact me <img src={chevronR} alt="chevron" width="25px" />
               </Link>
             </div>
           </div>
@@ -69,23 +89,15 @@ const Home = (props) => {
       <section className="horizontally-align project-bloc" id="projects">
         {projects.map((project, index) => (
           <span key={index} className="home-group-project">
-            {LoggedInUser ? (
-              <div>
-                <EditButton>
-                  <Link to={`/project/edit/${project._id}`}>Edit</Link>
-                </EditButton>
-                <DeleteButton
-                  type="submit"
-                  onClick={() => {
-                    handleDelete(project._id);
-                  }}
-                >
-                </DeleteButton>
-              </div>
-            ) : null}
             <Link to={`/project/${project._id}`} className="no-style-link">
               {project.name === "Fabienne Fiacre" ? (
-                <video controls autoPlay loop muted className="video-project home-shadow">
+                <video
+                  controls
+                  autoPlay
+                  loop
+                  muted
+                  className="video-project home-shadow"
+                >
                   <source src={project.video} type="video/mp4"></source>
                   Your browser does not support HTML video tag
                 </video>
@@ -103,42 +115,48 @@ const Home = (props) => {
                 />
               )}
             </Link>
+            {LoggedInUser ? (
+              <div>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  href={`/project/edit/${project._id}`}
+                >
+                  Edit
+                </Button>
+                <Button
+                  onClick={handleClickOpen}
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  startIcon={<DeleteIcon />}
+                >
+                  Delete
+                </Button>
+                <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-slide-title">{`Do you really want to delete ${project.name} ?`}</DialogTitle>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            No
+          </Button>
+          <Button onClick={() => handleCloseAndDelete(project._id)} color="primary" autoFocus>
+                      Yes
+                    </Button>
+        </DialogActions>
+      </Dialog>
+                              </div>
+            ) : null}
           </span>
         ))}
       </section>
-      <section className="tech-section">
-        <h2>TECHNOLOGIES</h2>
-        <div className="technologies">
-          <div className="one-tech">
-            <img src={Javascript} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">Javascript ES6</div>
-          </div>
-          <div className="one-tech">
-            <img src={ReactJS} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">React</div>
-          </div>
-          <div className="one-tech">
-            <img src={NodeJS} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">NodeJS</div>
-          </div>
-          <div className="one-tech">
-            <img src={MongoDB} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">MongoDB</div>
-          </div>
-          <div className="one-tech">
-            <img src={html5} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">HTML5</div>
-          </div>
-          <div className="one-tech">
-            <img src={css3} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">CSS3</div>
-          </div>
-          <div className="one-tech">
-            <img src={MaterialUI} alt="tech-logo" className="logo-tech"></img>
-            <div className="tech-title">Material UI</div>
-          </div>
-        </div>
-      </section>
+      <Technologies />
       {LoggedInUser ? (
         <button type="submit" addText="logout" onClick={props.onLogOut}>
           LOGOUT

@@ -1,46 +1,70 @@
 import React from "react";
-import MaterialUI from "../images/material-ui.png";
-import Javascript from "../images/js.png";
-import NodeJS from "../images/node.png";
-import ReactJS from "../images/react.jpeg";
-import MongoDB from "../images/mongo-db.gif";
-import html5 from "../images/html-5.png";
-import css3 from "../images/css-3.png";
+import Typography from "@material-ui/core/Typography";
 
 const Technologies = () => (
   <section className="tech-section">
-  <h2>TECHNOLOGIES</h2>
-  <div className="technologies">
-    <div className="one-tech">
-      <img src={Javascript} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">Javascript ES6</div>
+    <Typography variant="h6" gutterBottom>
+      Technologies
+    </Typography>
+    <div className="technologies">
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/js.png"
+          alt="js-logo"
+          className="logo-tech"
+        />
+        <h3>Javascript ES6</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/react.jpg"
+          alt="react-logo"
+          className="logo-tech"
+        />
+        <h3>React</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/node.png"
+          alt="node-logo"
+          className="logo-tech"
+        />
+        <h3>NodeJS</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/mongo-db.gif"
+          alt="mongo-db-logo"
+          className="logo-tech"
+        />
+        <h3>MongoDB</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/html-5.png"
+          alt="html5-logo"
+          className="logo-tech"
+        />
+        <h3>HTML5</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/css-3.png"
+          alt="css3-logo"
+          className="logo-tech"
+        />
+        <h3>CSS3</h3>
+      </div>
+      <div className="technology">
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/material-ui.png"
+          alt="material-ui-logo"
+          className="logo-tech"
+        />
+        <h3>Material UI</h3>
+      </div>
     </div>
-    <div className="one-tech">
-      <img src={ReactJS} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">React</div>
-    </div>
-    <div className="one-tech">
-      <img src={NodeJS} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">NodeJS</div>
-    </div>
-    <div className="one-tech">
-      <img src={MongoDB} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">MongoDB</div>
-    </div>
-    <div className="one-tech">
-      <img src={html5} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">HTML5</div>
-    </div>
-    <div className="one-tech">
-      <img src={css3} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">CSS3</div>
-    </div>
-    <div className="one-tech">
-      <img src={MaterialUI} alt="tech-logo" className="logo-tech"></img>
-      <div className="tech-title">Material UI</div>
-    </div>
-  </div>
-</section>
-)
+  </section>
+);
 
 export default Technologies;

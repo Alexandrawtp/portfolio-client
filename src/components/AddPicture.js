@@ -6,7 +6,7 @@ const AddPicture = () => {
   return (
     <>
       <b className="grey flex-container">Pictures</b>
-      <h4>Home</h4>
+      <h2>Home</h2>
       <Grid className="flex-container">
         <Grid item xs={12} sm={6} className="horizontally-align">
           <button type="button" className="add-btn">
@@ -15,7 +15,7 @@ const AddPicture = () => {
           <input name="image" type="file" className="custom-file-input" />
         </Grid>
         </Grid>
-      {/* <h4>Images</h4>
+      {/* <h2>Images</h2>
       <Grid className="flex-container">
         <Grid item sm={6} className="horizontally-align">
           <button type="button" className="add-btn">

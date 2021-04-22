@@ -29,6 +29,12 @@ const UseStyles = makeStyles((theme) => ({
     backgroundColor: "#3385ff"
   }
   },
+  dialogueTitle : {
+    fontSize: "18px",
+    fontWeight: 450,
+    fontFamily: "Roboto",
+    padding: '50px',
+  },
   button: {
     margin: theme.spacing(1),
   },

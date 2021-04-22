@@ -9,7 +9,7 @@ import Home from "./pages/Home.js";
 import About from "./pages/About.js";
 import NewProject from "./pages/NewProject.js";
 import ProjectDetails from "./pages/ProjectDetails.js";
-import EditForm from "./components/EditForm.js";
+import EditForm from "./components/EditProject.js";
 import Login from "./pages/Login.js";
 import SignUp from "./pages/SignUp.js";
 import Error404 from "./pages/Error404.js";
@@ -17,6 +17,7 @@ import axios from "axios";
 import config from "./config";
 
 export const UserContext = React.createContext();
+export const ProjectContext = React.createContext();
 
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(false);

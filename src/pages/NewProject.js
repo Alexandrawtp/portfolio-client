@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
 import PurpleButton from "../components/PurpleButton.js";
@@ -7,6 +8,7 @@ import config from "../config";
 import NavBar from "../components/NavBar.js";
 
 export default function Form(props) {
+  let history = useHistory();
 
   const addData = (e) => {
     e.preventDefault();
@@ -36,8 +38,9 @@ export default function Form(props) {
             url,
             teammates,
             githubRepo,
+            image
           })
-          .then((response) => response.data)
+          .then((response) => response.data, history.push("/"))
           .catch((error) => error.response.data.errorMessage)
       )
       .catch((err) => console.log(err));

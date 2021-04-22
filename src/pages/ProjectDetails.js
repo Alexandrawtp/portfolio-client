@@ -24,7 +24,7 @@ const ProjectDetails = (props) => {
     <NavBar />
       <div className="project-header">
         <h1>{project.name}</h1>
-      <h4 className="paragraph">{project.date}</h4>
+      <h2 className="paragraph">{project.date}</h2>
       <div className="paragraph">
         <b>Teammate :</b> {project.teammates} | {project.technologies}
       </div>

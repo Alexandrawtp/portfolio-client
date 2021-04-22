@@ -76,21 +76,17 @@ body, html {
   text-decoration: none;
 }
 
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .black-nav-element {
   z-index: 2;
   margin: 10px;
   color: #0c0b0b;
   text-decoration: none;
-}
-
-h1 {
-  margin: 0;
-  padding: 20px 0;
-  font-weight: 300;
-  text-align: left;
-  font-size: 35px;
-  font-family: "Poppins";
-  color: rgb(31, 26, 64);
 }
 
 .title-home {
@@ -103,22 +99,25 @@ h1 {
   color: rgb(255, 255, 255);
 }
 
-h2 {
-  font-weight: 600;
-  font-size: 20px;
-  color: rgb(17, 16, 16);
+h1 {
   margin: 0;
-  padding: 40px;
+  padding: 20px 0;
+  font-weight: 300;
+  text-align: left;
+  font-size: 35px;
+  font-family: "Poppins";
+  color: rgb(31, 26, 64);
+}
+
+h2 {
+  color: rgb(70, 162, 255);
+  margin: 0;
+  font-size: 15px;
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
-}
-
-h4 {
-  color: rgb(70, 162, 255);
-  margin: 0;
 }
 
 .paragraph {
@@ -144,11 +143,6 @@ h4 {
 
 .white-link:hover {
   margin-left: 10px;
-}
-
-.on-top {
-  position: relative;
-  z-index: 2;
 }
 
 .no-style-link {
@@ -183,11 +177,13 @@ h4 {
   flex-wrap: wrap;
   align-items: center;
   height: 570px;
+  position: relative;
+  z-index: 2;
 }
 
 .logo-tech {
   width: 70px;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .technologies {
@@ -202,16 +198,12 @@ h4 {
   min-width: 320px;
 }
 
-.one-tech {
+.technology {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   margin: 20px;
-}
-
-.tech-title {
-  color: rgb(0, 0, 0)
 }
 
 .home-project {

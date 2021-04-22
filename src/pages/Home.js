@@ -12,8 +12,6 @@ import UseStyle from "../components/UseStyle";
 import Technologies from "../components/Technologies";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 
@@ -67,7 +65,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="on-top section-1">
+      <div className="section-1">
         <section className="css-selector">
           <NavBarWhite />
           <div className="project-header">
@@ -141,7 +139,7 @@ const Home = (props) => {
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle id="alert-dialog-slide-title">{`Do you really want to delete ${project.name} ?`}</DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title" disableTypography className={classes.dialogueTitle}>{`Do you really want to delete ${project.name} ?`}</DialogTitle>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             No
@@ -157,11 +155,6 @@ const Home = (props) => {
         ))}
       </section>
       <Technologies />
-      {LoggedInUser ? (
-        <button type="submit" addText="logout" onClick={props.onLogOut}>
-          LOGOUT
-        </button>
-      ) : null}
     </div>
   );
 };

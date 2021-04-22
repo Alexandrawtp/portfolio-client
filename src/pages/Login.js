@@ -6,7 +6,6 @@ import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import alertIcon from "../images/alert.png";
 import UseStyles from "../components/UseStyle.js";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import blue from "@material-ui/core/colors/blue";
@@ -59,7 +58,7 @@ export default function SignIn(props) {
             </Grid>
             {props.error ? (
               <div className="error-message">
-                <img src={alertIcon} alt="alert-icon" className="alert-icon" />
+                <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/alert-panel.png" alt="alert-icon" className="alert-icon" />
                 <p>{props.error}</p>
               </div>
             ) : null}

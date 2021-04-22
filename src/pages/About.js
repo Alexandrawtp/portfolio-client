@@ -1,13 +1,12 @@
 import React from "react";
 import NavBarWhite from "../components/NavBarWhite.js";
-import photoid from "../images/photoid.png";
 
 const About = () => {
   return (
     <section className="about css-selector">
       <NavBarWhite />
       <div className="paragraph-about">
-      <img src={photoid} alt="id" width="200px" height="285px"/>
+      <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110925/icons/photo-id.png" alt="id" width="200px" height="285px"/>
       <div className="paragraph about-text">
         As a former art historian in the art market field, I have always enjoyed
         playing with databases and enigmas.

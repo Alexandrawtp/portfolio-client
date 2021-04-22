@@ -9,7 +9,7 @@ import Home from "./pages/Home.js";
 import About from "./pages/About.js";
 import NewProject from "./pages/NewProject.js";
 import ProjectDetails from "./pages/ProjectDetails.js";
-import EditForm from "./components/EditProject.js";
+import EditProject from "./pages/EditProject";
 import Login from "./pages/Login.js";
 import SignUp from "./pages/SignUp.js";
 import Error404 from "./pages/Error404.js";
@@ -24,10 +24,11 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
+    console.log("app useEffect")
     if (!LoggedInUser) {
       axios
         .get(`${config.API_URL}/api/me`, { withCredentials: true })
-        .then((response) => {console.log(response); setLoggedInUser(response.data)})
+        .then((response) => setLoggedInUser(response.data))
         .catch((error) => error.response.data.errorMessage);
     }
   }, [LoggedInUser, setLoggedInUser]);
@@ -100,7 +101,7 @@ const App = () => {
           </Route>
           <Route
             path="/project/edit/:id"
-            render={(props) => <EditForm {...props} />}
+            render={(props) => <EditProject {...props} />}
           />
           <Route
             path="/project/:id"

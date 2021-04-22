@@ -5,7 +5,6 @@ import config from "../config";
 import axios from "axios";
 import PurpleButton from "../components/PurpleButton.js";
 import NavBarWhite from "../components/NavBarWhite";
-import chevronR from "../images/chevron.png";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import UseStyle from "../components/UseStyle";
@@ -78,7 +77,7 @@ const Home = (props) => {
                 <PurpleButton addText="discover projects"></PurpleButton>
               </a>
               <Link to={"/about"} className="no-style-link white-link">
-                Contact me <img src={chevronR} alt="chevron" width="25px" />
+                Contact me <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/chevron-right.png" alt="chevron" width="25px" />
               </Link>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
-import LogoWhite from "../images/logo-white.png";
 import config from "../config";
 import axios from "axios";
 
@@ -20,7 +19,7 @@ const NavBarWhite = () => {
   return (
     <div className="navBar">
       <Link to="/">
-        <img src={LogoWhite} alt="logo" className="logo-portfolio" />
+        <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110538/icons/logo-white.png" alt="logo" className="logo-portfolio" />
       </Link>
       <div className="nav-list">
         {LoggedInUser ? (

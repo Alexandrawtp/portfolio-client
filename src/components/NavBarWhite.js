@@ -24,15 +24,15 @@ const NavBarWhite = () => {
       <div className="nav-list">
         {LoggedInUser ? (
           <>
-            <Link to="/add" className="nav-element">
-              <h3>Add </h3>
-            </Link>
-            <button
+          <button
               className="nav-element logout-btn"
               onClick={(e) => handleLogout(e)}
             >
               <h3>Logout</h3>
             </button>
+            <Link to="/add" className="nav-element">
+              <h3>Add </h3>
+            </Link>
           </>
         ) : null}
         <Link to="/about" className="nav-element">

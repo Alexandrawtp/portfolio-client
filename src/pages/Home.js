@@ -9,10 +9,10 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import UseStyle from "../components/UseStyle";
 import Technologies from "../components/Technologies";
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -77,7 +77,12 @@ const Home = (props) => {
                 <PurpleButton addText="discover projects"></PurpleButton>
               </a>
               <Link to={"/about"} className="no-style-link white-link">
-                Contact me <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/chevron-right.png" alt="chevron" width="25px" />
+                Contact me{" "}
+                <img
+                  src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/chevron-right.png"
+                  alt="chevron"
+                  width="25px"
+                />
               </Link>
             </div>
           </div>
@@ -131,24 +136,32 @@ const Home = (props) => {
                   Delete
                 </Button>
                 <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-slide-title"
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle id="alert-dialog-slide-title" disableTypography className={classes.dialogueTitle}>{`Do you really want to delete ${project.name} ?`}</DialogTitle>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            No
-          </Button>
-          <Button onClick={() => handleCloseAndDelete(project._id)} color="primary" autoFocus>
+                  open={open}
+                  TransitionComponent={Transition}
+                  keepMounted
+                  onClose={handleClose}
+                  aria-labelledby="alert-dialog-slide-title"
+                  aria-describedby="alert-dialog-slide-description"
+                >
+                  <DialogTitle
+                    id="alert-dialog-slide-title"
+                    disableTypography
+                    className={classes.dialogueTitle}
+                  >{`Do you really want to delete ${project.name} ?`}</DialogTitle>
+                  <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                      No
+                    </Button>
+                    <Button
+                      onClick={() => handleCloseAndDelete(project._id)}
+                      color="primary"
+                      autoFocus
+                    >
                       Yes
                     </Button>
-        </DialogActions>
-      </Dialog>
-                              </div>
+                  </DialogActions>
+                </Dialog>
+              </div>
             ) : null}
           </span>
         ))}

@@ -22,7 +22,7 @@ const AddForm = () => {
         <Typography variant="h6" gutterBottom>
           New project
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} >
           <Grid item xs={12} sm={6}>
             <TextField name="name" label="Name" fullWidth />
           </Grid>

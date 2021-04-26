@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 400;
-  background-color: #fafafa;;
+  background-color: #f1f8ff;
   font-size: 15px;
   scroll-behavior: smooth;
 }
@@ -22,24 +22,51 @@ body, html {
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%
+  }
+  50% {
+    background-position: 100% 10%
+  }
+  100% {
+    background-position: 0% 91%
+  }
 }
+
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%
+  }
+  50% {
+    background-position: 100% 10%
+  }
+  100% {
+    background-position: 0% 91%
+  }
 }
+
 @-o-keyframes AnimationName {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%
+  }
+  50% {
+    background-position: 100% 10%
+  }
+  100% {
+    background-position: 0% 91%
+  }
 }
+
 @keyframes AnimationName {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%
+  }
+  50% {
+    background-position: 100% 10%
+  }
+  100% {
+    background-position: 0% 91%
+  }
 }
 
 /* General setup */
@@ -53,7 +80,7 @@ body, html {
   background-color: #5896ff;
 }
 
-.navBar{
+.navBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,6 +107,10 @@ body, html {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.logout-btn:focus {
+  outline: 0;
 }
 
 .black-nav-element {
@@ -164,6 +195,13 @@ h3 {
   text-align: center;
 }
 
+.centered-content {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +230,14 @@ h3 {
   justify-content: space-evenly;
 }
 
+.tech-middle {
+  background-color: #e8f0ff;
+  width: 40%;
+  margin: 30px;
+  padding: 20px;
+  min-width: 320px;
+}
+
 .tech-section {
   background-color: #e8f0ff;
   padding: 40px 7%;
@@ -208,7 +254,7 @@ h3 {
 
 .home-project {
   width: 100%;
-  margin: 10px;
+  margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0px 0px 8px 5px rgb(233, 233, 233);
 }
@@ -233,8 +279,8 @@ h3 {
   margin: 0 10%;
 }
 
-.form-style {
-  color: #cf4545;
+.form-edit {
+  margin: 30px 0;
 }
 
 .add-btn {
@@ -374,54 +420,60 @@ h3 {
 
 /* about */
 
-.about {
-  color: #ffffff;
-  height: 2000px;
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  width: 40%;
+  margin: 30px;
+  padding: 20px;
+  min-width: 320px;
+  height: 550px;
 }
 
-.logo {
-  width: 200px;
-  transition-duration: 0.6s;
+.location {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.logo:hover {
-  width: 230px;
-}
-
-.centered-content {
-  margin: auto;
-  text-align: center;
+.photo-id {
+  width: 170px;
+  height: 240px;
+  border-radius: 10px;
 }
 
 .contact-group {
-  padding: 20px 0;
-}
-
-.email {
-  color: rgb(62, 112, 251);
-  font-weight: 600;
-  transition-duration: 0.6s;
-  margin: 50px;
-}
-
-.email:hover {
-  color: rgb(27, 95, 255);
-  font-size: 18px;
-}
-
-.about-group {
-  display: flex;
-  align-items: flex-start;
+  margin: 20px;
 }
 
 .paragraph-about {
   display: flex;
   align-content: flex-start;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 8% 40px 8%;
 }
 
 .about-text {
-  width: 60%;
+  width: 70%;
   margin-left: 30px;
+  color: #000000;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.chevron-link {
+  display: flex;
+  align-items: center;
+  color: #5896ff;
+  transition-duration: 0.6s;
+}
+
+.chevron-link:hover {
+  margin-left: 10px;
 }

@@ -9,7 +9,7 @@ const NavBar = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    
+
     axios
       .post(`${config.API_URL}/api/logout`, {}, { withCredentials: true })
       .then(() => window.location.reload())
@@ -19,21 +19,25 @@ const NavBar = () => {
   return (
     <div className="navBarBlack">
       <Link to="/">
-        <img src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110538/icons/logo-black.png" alt="logo" className="logo-portfolio" />
+        <img
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110538/icons/logo-black.png"
+          alt="logo"
+          className="logo-portfolio"
+        />
       </Link>
       <div className="nav-list">
         {LoggedInUser ? (
           <>
-          <Link to="/add" className="black-nav-element">
-            <h3>Add </h3>
-          </Link>
-          <button
+            <button
               className="black-nav-element logout-btn"
               onClick={(e) => handleLogout(e)}
             >
               <h3>Logout</h3>
-            </button>  
-        </>
+            </button>
+            <Link to="/add" className="black-nav-element">
+              <h3>Add </h3>
+            </Link>
+          </>
         ) : null}
         <Link to="/about" className="black-nav-element">
           <h3>About</h3>

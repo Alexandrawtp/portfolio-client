@@ -69,7 +69,8 @@ const EditForm = (props) => {
           <Typography variant="h6" gutterBottom>
             Modify project
           </Typography>
-          <Grid container spacing={4}>
+          <div className="form-edit">
+          <Grid container spacing={4} >
             <Grid item xs={12} sm={6}>
               <TextField
                 name="name"
@@ -167,9 +168,11 @@ const EditForm = (props) => {
               />
             </Grid>
           </Grid>
+          </div>
         </React.Fragment>
       </ThemeProvider>
       </form>
+
       <PurpleButton onClick={(e) => handleEdit(e, project)} />
     </>
   );

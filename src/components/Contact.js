@@ -41,6 +41,7 @@ const Contact = () => (
         </div>
       </div>
     </div>
+
     <div className="vertically-align">
       <a
         href="https://github.com/Alexandrawtp"
@@ -54,6 +55,7 @@ const Contact = () => (
         ></img>
       </a>
       <h3>Github</h3>
+      <div className="centered-content">
       <a
         href="https://github.com/Alexandrawtp"
         target="_blank"
@@ -63,6 +65,7 @@ const Contact = () => (
         Visit
         <ChevronRight />
       </a>
+      </div>
     </div>
   </section>
 );

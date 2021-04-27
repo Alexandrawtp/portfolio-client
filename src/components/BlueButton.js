@@ -1,26 +1,26 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import UseStyles from "../components/UseStyle.js";
+import UseStyles from "./UseStyle.js";
 import Grid from "@material-ui/core/Grid";
 
 const btnText = (text) => {
   switch (text) {
-    case "discover":
-      return "discover";
     case "signIn":
       return "sign in";
     case "sigUp":
       return "sign up";
-    case "logout":
-      return "log out";
-    case "discover projects":
-      return "Discover projects";
+    case "discover":
+      return "discover";
+    case "delete":
+      return "delete";
+    case "technologies":
+      return "technologies";
     default:
       return "submit";
   }
 };
 
-const PurpleButton = (props) => {
+const BlueButton = (props) => {
   let text = props.addText;
   const classes = UseStyles();
   return (
@@ -32,4 +32,4 @@ const PurpleButton = (props) => {
   );
 };
 
-export default PurpleButton;
+export default BlueButton;

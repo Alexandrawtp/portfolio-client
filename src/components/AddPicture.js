@@ -6,7 +6,6 @@ const AddPicture = () => {
   return (
     <>
       <b className="grey flex-container">Pictures</b>
-      <h2>Home</h2>
       <Grid className="flex-container">
         <Grid item xs={12} sm={6} className="horizontally-align">
           <button type="button" className="add-btn">
@@ -14,17 +13,7 @@ const AddPicture = () => {
           </button>
           <input name="image" type="file" className="custom-file-input" />
         </Grid>
-        </Grid>
-      {/* <h2>Images</h2>
-      <Grid className="flex-container">
-        <Grid item sm={6} className="horizontally-align">
-          <button type="button" className="add-btn">
-            <AddRoundedIcon />
-          </button>
-          <input name="files" type="file" multiple accept="image/*,video/*" className="custom-file-input" />
-        </Grid>
       </Grid>
-      */}
     </>
   );
 };

@@ -1,15 +1,8 @@
 import React from "react";
 
 const Presentation = () => (
-  <section className="paragraph-about">
-  <div>
-    <img
-      src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110925/icons/photo-id.png"
-      alt="id"
-      className="photo-id"
-    />
-    </div>
-    <div className="paragraph about-text">
+  <section className="paragraph-about horizontally-align">
+    <div className="about-text">
       As a former art historian in the art market field, I have always enjoyed
       playing with databases and enigmas.
       <p>
@@ -23,6 +16,13 @@ const Presentation = () => (
         with a web development bootcamp, Ironhack, which was one of the most
         rewarding experiences of my life.
       </p>
+    </div>
+    <div>
+      <img
+        src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110925/icons/photo-id.png"
+        alt="id"
+        className="photo-id"
+      />
     </div>
   </section>
 );

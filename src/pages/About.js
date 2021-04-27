@@ -9,7 +9,7 @@ const About = () => {
     <>
       <NavBar />
       <Presentation />
-      <div className="horizontally-align">
+      <div className="horizontally-align blue-background">
         <Doughnut />
         <Contact />
       </div>

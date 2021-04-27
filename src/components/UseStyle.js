@@ -4,7 +4,6 @@ import {
 import blue from "@material-ui/core/colors/blue";
 const color = blue[600];
 
-
 const UseStyles = makeStyles((theme) => ({
   palette: {
     primary: {
@@ -17,17 +16,14 @@ const UseStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   root: {
-    background: '#0066FF',
-    borderRadius: 40,
+    background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
+    borderRadius: 4,
     border: 0,
     color: 'white',
     height: 32,
     padding: '0 20px',
     textTransform: 'capitalize',
     margin: "10px 30px 10px 0",
-    "&:hover": {
-    backgroundColor: "#3385ff"
-  }
   },
   dialogueTitle : {
     fontSize: "18px",

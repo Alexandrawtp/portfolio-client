@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config";
-import PurpleButton from "../components/PurpleButton";
+import BlueButton from "../components/BlueButton";
 import NavBar from "../components/NavBar.js";
 
 const ProjectDetails = (props) => {
@@ -37,10 +37,10 @@ const ProjectDetails = (props) => {
           rel="noreferrer"
           className="no-style-link"
         >
-          <PurpleButton
+          <BlueButton
             addText="discover"
             className="no-style-link"
-          ></PurpleButton>
+          />
         </a>
         <a
           href={project.githubRepo}

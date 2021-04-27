@@ -1,5 +1,5 @@
 import React from "react";
-import PurpleButton from "../components/PurpleButton.js";
+import BlueButton from "../components/BlueButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -63,14 +63,13 @@ export default function SignIn(props) {
               </div>
             ) : null}
             <Grid container justify="center" width="100%">
-              <PurpleButton
+              <BlueButton
                 type="submit"
                 fullWidth
                 variant="contained"
                 addText="signIn"
                 className={classes.submit}
-              >
-              </PurpleButton>
+              />
             </Grid>
             <Grid container justify="flex-end">
               <Grid item>

@@ -8,7 +8,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import blue from "@material-ui/core/colors/blue";
 import { useHistory } from "react-router-dom";
 import Navbar from "../components/NavBar";
-import PurpleButton from "../components/PurpleButton";
+import BlueButton from "../components/BlueButton";
 
 const color = blue[600];
 
@@ -171,9 +171,8 @@ const EditForm = (props) => {
           </div>
         </React.Fragment>
       </ThemeProvider>
+      <BlueButton type="submit" addText="submit"/>
       </form>
-
-      <PurpleButton onClick={(e) => handleEdit(e, project)} />
     </>
   );
 };

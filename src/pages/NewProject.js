@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import AddForm from "../components/AddForm.js";
 import AddPicture from "../components/AddPicture.js";
-import PurpleButton from "../components/PurpleButton.js";
+import BlueButton from "../components/BlueButton.js";
 import axios from "axios";
 import config from "../config";
 import NavBar from "../components/NavBar.js";
@@ -21,6 +21,7 @@ export default function Form(props) {
     let teammates = e.target.teammates.value;
     let githubRepo = e.target.githubRepo.value;
     let image = e.target.image.files[0];
+    console.log(image)
 
     let uploadForm = new FormData();
     uploadForm.append("imageUrl", image);
@@ -52,7 +53,7 @@ export default function Form(props) {
       <form onSubmit={(e) => addData(e)} className="form">
         <AddForm  />
         <AddPicture />
-        <PurpleButton type="submit" addText="submit" />
+        <BlueButton type="submit" />
       </form>
     </>
   );

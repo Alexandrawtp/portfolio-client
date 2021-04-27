@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "../App.js";
 import { Link } from "react-router-dom";
+import { UserContext } from "../App.js";
 import config from "../config";
 import axios from "axios";
-import PurpleButton from "../components/PurpleButton.js";
-import NavBarWhite from "../components/NavBarWhite";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import UseStyle from "../components/UseStyle";
@@ -13,6 +11,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
+import HomeHeader from "../components/HomeHeader";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -28,7 +27,7 @@ const Home = (props) => {
     axios
       .get(`${config.API_URL}/api/projects`)
       .then((response) => setProjects(response.data))
-      .catch((err) => console.log("Getting projects failed", err));
+      .catch((err) => console.log("Getting projects failed", err))
   }, [setProjects]);
 
   const handleDelete = (id) => {
@@ -64,31 +63,8 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="section-1">
-        <section className="css-selector">
-          <NavBarWhite />
-          <div className="project-header">
-            <div className="title-home">
-              Welcome ! My name is Alexandra, and I am a full stack web
-              developer.
-            </div>
-            <div className="horizontally-align double-buttons">
-              <a href="#projects" className="no-style-link">
-                <PurpleButton addText="discover projects"></PurpleButton>
-              </a>
-              <Link to={"/about"} className="no-style-link white-link">
-                Contact me{" "}
-                <img
-                  src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/chevron-right.png"
-                  alt="chevron"
-                  width="25px"
-                />
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section className="horizontally-align project-bloc" id="projects">
+      <HomeHeader />
+      <section className="horizontally-align project-bloc">
         {projects.map((project, index) => (
           <span key={index} className="home-group-project">
             <Link to={`/project/${project._id}`} className="no-style-link">
@@ -166,7 +142,9 @@ const Home = (props) => {
           </span>
         ))}
       </section>
-      <Technologies />
+      <section id="technologies">
+        <Technologies />
+      </section>
     </div>
   );
 };

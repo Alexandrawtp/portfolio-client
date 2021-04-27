@@ -1,5 +1,5 @@
 import React from "react";
-import PurpleButton from "../components/PurpleButton.js";
+import BlueButton from "../components/BlueButton.js";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
@@ -29,7 +29,7 @@ export default function SignUp(props) {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5" className="form-title">
+        <Typography component="h1" variant="h5">
           Sign up
         </Typography>
         <form className={classes.form} noValidate onSignUp={props.onSignUp}>
@@ -84,15 +84,13 @@ export default function SignUp(props) {
               ) : null}
             </div>
           </Grid>
-          <PurpleButton
+          <BlueButton
             type="submit"
             fullWidth
             variant="contained"
             addText="signUp"
             className={classes.submit}
-          >
-            Sign Up
-          </PurpleButton>
+          />
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="/login" variant="body2" className="link">

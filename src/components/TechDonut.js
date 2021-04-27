@@ -29,12 +29,14 @@ const data = {
 };
 
 const DoughnutChart = () => (
-  <section className="tech-middle">
-    <Typography variant="h6" gutterBottom>
-      Technologies
-    </Typography>
-    <Doughnut data={data} />
-  </section>
+  <>
+    <section className="tech-middle">
+      <Typography variant="h6" gutterBottom className="tech-title">
+        Technologies
+      </Typography>
+      <Doughnut data={data} />
+    </section>
+  </>
 );
 
 export default DoughnutChart;

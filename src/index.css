@@ -5,14 +5,11 @@ body, html {
   font-weight: 400;
   font-size: 15px;
   scroll-behavior: smooth;
-  background-color: white;
+  background-color: #fafafa;
 }
 
 .css-selector {
-  height: 570px;
   width: 100%;
-  position: absolute;
-  top: 0;
   background: linear-gradient(240deg, #80d1ff, #c7e3ff, #44b7e3, #5896ff, #91b6ff);
   background-size: 1000% 1000%;
   -webkit-animation: AnimationName 15s ease infinite;
@@ -81,19 +78,26 @@ body, html {
 }
 
 .navBar {
+  position: fixed;
+  top: 0;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 7%;
+  padding: 20px;
+  background-color: rgb(143, 180, 255);
+  z-index: 2;
 }
 
 .nav-list {
+  margin-right: 40px;
   display: flex;
 }
 
 .logo-portfolio {
   width: 40px;
   height: 40px;
+  margin-left: 40px;
 }
 
 .nav-element {
@@ -122,10 +126,8 @@ body, html {
 
 .title-home {
   margin: 0;
-  padding: 20px 0;
-  font-weight: 100;
   text-align: left;
-  font-size: 35px;
+  font-size: 28px;
   font-family: "Poppins";
   color: rgb(255, 255, 255);
 }
@@ -208,35 +210,41 @@ h3 {
 .section-1 {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  height: 570px;
+  align-items: space-between;
+  height: 560px;
   position: relative;
-  z-index: 2;
+  padding: 30px 0;
+}
+
+.project-header {
+  margin-top: 110px;
 }
 
 .logo-tech {
-  width: 70px;
+  width: 50px;
   margin-bottom: 10px;
+  margin: auto;
 }
 
 .technologies {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
-
-.tech-section {
-  background-color: #e8f0ff;
-  padding: 40px 7%;
-  min-width: 320px;
+  width: 40%;
+  min-width: 280px;
 }
 
 .technology {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
   margin: 20px;
+  text-align: center;
+}
+
+.tech-section {
+  background-color: #e8f0ff;
+  padding: 40px 7%;
 }
 
 .home-project {
@@ -350,10 +358,8 @@ h3 {
 /* Project details */
 
 .project-header {
-  margin: auto;
-  padding: 8% 0 50px 0;
-  width: 74%;
-  min-width: 320px;
+  width: 50%;
+  min-width: 280px;
 }
 
 .home-img {
@@ -435,7 +441,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 .about-text {
@@ -466,11 +472,12 @@ h3 {
   background-color: #f1f8ff;
 }
 
-.tech-middle {
+.doughnut {
   padding: 30px;
+  width: 30%;
+  min-width: 280px;
 }
 
 .tech-title {
-  padding: 20px;
   text-align: center;
 }

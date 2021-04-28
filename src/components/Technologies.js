@@ -1,15 +1,13 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+import Doughnut from "./Doughnut";
 
 const Technologies = () => (
-  <section className="tech-section">
-    <Typography variant="h6" gutterBottom>
-      Technologies
-    </Typography>
+  <section className="tech-section horizontally-align">
+    <Doughnut />
     <div className="technologies">
       <div className="technology">
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/js.png"
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop,h_400,w_400/v1619086218/Technologies/js.png"
           alt="js-logo"
           className="logo-tech"
         />
@@ -41,7 +39,7 @@ const Technologies = () => (
       </div>
       <div className="technology">
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/html-5.png"
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619615546/Technologies/html-5_.png"
           alt="html5-logo"
           className="logo-tech"
         />
@@ -49,7 +47,7 @@ const Technologies = () => (
       </div>
       <div className="technology">
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/css-3.png"
+          src="https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop/v1619086218/Technologies/css-3.png"
           alt="css3-logo"
           className="logo-tech"
         />

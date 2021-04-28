@@ -10,7 +10,6 @@ const Presentation = () => (
         advice on how to build her website. At that time, I was doing some
         Python as an amateur, so I suggested her to try with a CMS.
       </p>
-      <p>It was a revelation!</p>
       <p>
         I then trained myself (thank you internet !), and completed my training
         with a web development bootcamp, Ironhack, which was one of the most
@@ -19,7 +18,7 @@ const Presentation = () => (
     </div>
     <div>
       <img
-        src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110925/icons/photo-id.png"
+        src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619603464/icons/photoid.png"
         alt="id"
         className="photo-id"
       />

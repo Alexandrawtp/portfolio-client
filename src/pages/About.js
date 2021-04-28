@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Presentation from "../components/Presentation";
 import Contact from "../components/Contact";
-import Doughnut from "../components/TechDonut";
+import Doughnut from "../components/Doughnut";
 
 const About = () => {
   return (

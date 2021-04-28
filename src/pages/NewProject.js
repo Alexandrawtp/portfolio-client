@@ -21,14 +21,13 @@ export default function Form(props) {
     let teammates = e.target.teammates.value;
     let githubRepo = e.target.githubRepo.value;
     let image = e.target.image.files[0];
-    console.log(image)
 
     let uploadForm = new FormData();
     uploadForm.append("imageUrl", image);
 
     axios
       .post(`${config.API_URL}/api/upload`, uploadForm)
-      .then(() =>
+      .then((response) =>
         axios
           .post(`${config.API_URL}/api/create`, {
             name,
@@ -39,7 +38,7 @@ export default function Form(props) {
             url,
             teammates,
             githubRepo,
-            image
+            image: response.data.image
           })
           .then((response) => response.data, history.push("/"))
           .catch((error) => error.response.data.errorMessage)
@@ -51,7 +50,7 @@ export default function Form(props) {
     <>
       <NavBar />
       <form onSubmit={(e) => addData(e)} className="form">
-        <AddForm  />
+        <AddForm />
         <AddPicture />
         <BlueButton type="submit" />
       </form>

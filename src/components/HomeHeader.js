@@ -1,12 +1,13 @@
 import React from "react";
-import BlueButton from "../components/BlueButton.js";
-import NavBarWhite from "../components/NavBarWhite";
+import BlueButton from "./BlueButton";
+import NavBarWhite from "./NavBarWhite";
 import { Link } from "react-router-dom";
+import ProfilePicture from "./ProfilePic";
 
 const HomeHeader = () => (
-  <div className="section-1 css-selector">
-    <section className="css-selector">
-      <NavBarWhite />
+  <section className="section-1 css-selector ">
+    <NavBarWhite />
+    <div className="project-content horizontally-align">
       <div className="project-header">
         <div className="title-home">
           Welcome ! My name is Alexandra, and I am a full stack web developer.
@@ -25,8 +26,11 @@ const HomeHeader = () => (
           </Link>
         </div>
       </div>
-    </section>
-  </div>
+      <div>
+        <ProfilePicture />
+      </div>
+    </div>
+  </section>
 );
 
 export default HomeHeader;

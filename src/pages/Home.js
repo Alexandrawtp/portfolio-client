@@ -27,7 +27,7 @@ const Home = (props) => {
     axios
       .get(`${config.API_URL}/api/projects`)
       .then((response) => setProjects(response.data))
-      .catch((err) => console.log("Getting projects failed", err))
+      .catch((err) => console.log("Getting projects failed", err));
   }, [setProjects]);
 
   const handleDelete = (id) => {
@@ -64,6 +64,7 @@ const Home = (props) => {
   return (
     <div>
       <HomeHeader />
+      <Technologies />
       <section className="horizontally-align project-bloc">
         {projects.map((project, index) => (
           <span key={index} className="home-group-project">
@@ -79,19 +80,13 @@ const Home = (props) => {
                   <source src={project.video} type="video/mp4"></source>
                   Your browser does not support HTML video tag
                 </video>
-              ) : project.name === "Fish Fighter" ? (
+              ) : 
                 <img
                   src={project.image}
                   alt="project"
                   className="home-project"
                 />
-              ) : (
-                <img
-                  src={project.image}
-                  alt="project"
-                  className="home-project"
-                />
-              )}
+              }
             </Link>
             {LoggedInUser ? (
               <div>
@@ -141,9 +136,6 @@ const Home = (props) => {
             ) : null}
           </span>
         ))}
-      </section>
-      <section id="technologies">
-        <Technologies />
       </section>
     </div>
   );

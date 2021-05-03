@@ -1,19 +1,19 @@
-import React from "react";
-import BlueButton from "../components/BlueButton.js";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import UseStyles from "../components/UseStyle";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import blue from "@material-ui/core/colors/blue";
-import NavBar from "../components/NavBar.js";
+import React from 'react';
+import PrimaryButton from '../components/PrimaryButton.js';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import UseStyles from '../components/UseStyle';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import deepPurple from '@material-ui/core/colors/deepPurple';
+import NavBar from '../components/NavBar.js';
 
 export default function SignUp(props) {
   const classes = UseStyles();
-  const color = blue[600];
+  const color = deepPurple[300];
 
   const theme = createMuiTheme({
     palette: {
@@ -25,83 +25,83 @@ export default function SignUp(props) {
 
   return (
     <>
-    <NavBar />
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate onSignUp={props.onSignUp}>
-        <ThemeProvider theme={theme}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="false"
-                name="firstName"
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            <div>
-              {props.error ? (
-                <div className="error-message">
-                  <img
-                    src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/alert-panel.png"
-                    alt="alert-icon"
-                    className="alert-icon"
+      <NavBar />
+      <Container component='main' maxWidth='xs'>
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Typography component='h1' variant='h5'>
+            Sign up
+          </Typography>
+          <form className={classes.form} noValidate onSignUp={props.onSignUp}>
+            <ThemeProvider theme={theme}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    autoComplete='false'
+                    name='firstName'
+                    fullWidth
+                    id='firstName'
+                    label='First Name'
+                    autoFocus
                   />
-                  <p>{props.error}</p>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    id='lastName'
+                    label='Last Name'
+                    name='lastName'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    id='email'
+                    label='Email Address'
+                    name='email'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    name='password'
+                    label='Password'
+                    type='password'
+                    id='password'
+                    autoComplete='current-password'
+                  />
+                </Grid>
+                <div>
+                  {props.error ? (
+                    <div className='error-message'>
+                      <img
+                        src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110383/icons/alert-panel.png'
+                        alt='alert-icon'
+                        className='alert-icon'
+                      />
+                      <p>{props.error}</p>
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-          </Grid>
-          <BlueButton
-            type="submit"
-            fullWidth
-            variant="contained"
-            addText="signUp"
-            className={classes.submit}
-          />
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="/login" variant="body2" className="link">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
-          </ThemeProvider>
-        </form>
-      </div>
-    </Container>
+              </Grid>
+              <PrimaryButton
+                type='submit'
+                fullWidth
+                variant='contained'
+                addText='signUp'
+                className={classes.submit}
+              />
+              <Grid container justify='flex-end'>
+                <Grid item>
+                  <Link href='/login' variant='body2'>
+                    Already have an account? Sign in
+                  </Link>
+                </Grid>
+              </Grid>
+            </ThemeProvider>
+          </form>
+        </div>
+      </Container>
     </>
   );
 }

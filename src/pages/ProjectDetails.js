@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import config from "../config";
-import BlueButton from "../components/BlueButton";
-import NavBar from "../components/NavBar.js";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import config from '../config';
+import PrimaryButton from '../components/PrimaryButton';
+import NavBar from '../components/NavBar';
+import SecondaryButton from '../components/SecondaryButton';
 
 const ProjectDetails = (props) => {
   let projectId = props.match.params.id;
@@ -12,7 +13,7 @@ const ProjectDetails = (props) => {
     axios
       .get(`${config.API_URL}/api/project/${projectId}`)
       .then((response) => setProject(response.data))
-      .catch((err) => console.log("Getting project failed", err));
+      .catch((err) => console.log('Getting project failed', err));
   }, [setProject, projectId]);
 
   if (!project) {
@@ -21,45 +22,32 @@ const ProjectDetails = (props) => {
 
   return (
     <>
-    <NavBar />
-      <div className="project-header">
+      <NavBar />
+      <div className='project-header'>
         <h1>{project.name}</h1>
-      <h2 className="paragraph">{project.date}</h2>
-      <div className="paragraph">
-        <b>Teammate :</b> {project.teammates} | {project.technologies}
+        <h2 className='paragraph'>{project.date}</h2>
+        <div className='paragraph'>
+          <b>Teammate :</b> {project.teammates} | {project.technologies}
+        </div>
+        <div className='paragraph'>{project.about}</div>
+        <div className='paragraph'>{project.description}</div>
+        <div className='horizontally-align double-buttons'>
+          <a href={project.url} target='_blank' rel='noreferrer' className='no-style-link'>
+            <PrimaryButton addText='discover' />
+          </a>
+          <a href={project.githubRepo} target='_blank' rel='noreferrer' className='no-style-link'>
+            <SecondaryButton addText="github"/>
+          </a>
+        </div>
       </div>
-      <div className="paragraph">{project.about}</div>
-      <div className="paragraph">{project.description}</div>
-      <div className="horizontally-align double-buttons">
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noreferrer"
-          className="no-style-link"
-        >
-          <BlueButton
-            addText="discover"
-            className="no-style-link"
-          />
-        </a>
-        <a
-          href={project.githubRepo}
-          target="_blank"
-          rel="noreferrer"
-          className="no-style-link link"
-        >
-          Github
-        </a>
-      </div>
-      </div>
-      <div className="horizontally-align project-bloc">
-        <video controls autoPlay loop muted className="video-project">
-          <source src={project.video} type="video/mp4"></source>
+      <div className='horizontally-align project-bloc'>
+        <video controls autoPlay loop muted className='video-project'>
+          <source src={project.video} type='video/mp4'></source>
           Your browser does not support HTML video tag
         </video>
-        <img src={project.image} alt="screen" className="home-img" />
-        <img src={project.horizontal} alt="screen" className="horizontal-img" />
-        <img src={project.tablette} alt="screen" className="tablette-img" />
+        <img src={project.image} alt='screen' className='home-img' />
+        <img src={project.horizontal} alt='screen' className='horizontal-img' />
+        <img src={project.tablette} alt='screen' className='tablette-img' />
       </div>
     </>
   );

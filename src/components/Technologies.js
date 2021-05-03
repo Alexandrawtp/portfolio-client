@@ -1,66 +1,68 @@
-import React from "react";
-import Doughnut from "./Doughnut";
+import React from 'react';
+import Doughnut from './Doughnut';
 
 const Technologies = () => (
-  <section className="tech-section horizontally-align">
+  <section className='tech-section'>
+  <div className="section-content horizontally-align">
     <Doughnut />
-    <div className="technologies">
-      <div className="technology">
+    <div className='technologies'>
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop,h_400,w_400/v1619086218/Technologies/js.png"
-          alt="js-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop,h_400,w_400/v1619086218/Technologies/js.png'
+          alt='js-logo'
+          className='logo-tech'
         />
-        <h3>Javascript ES6</h3>
+        <h3 className="tech-title">Javascript ES6</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/react.jpg"
-          alt="react-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/react.jpg'
+          alt='react-logo'
+          className='logo-tech'
         />
-        <h3>React</h3>
+        <h3 className="tech-title">React</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/node.png"
-          alt="node-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/node.png'
+          alt='node-logo'
+          className='logo-tech'
         />
-        <h3>NodeJS</h3>
+        <h3 className="tech-title">NodeJS</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/mongo-db.gif"
-          alt="mongo-db-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/mongo-db.gif'
+          alt='mongo-db-logo'
+          className='logo-tech'
         />
-        <h3>MongoDB</h3>
+        <h3 className="tech-title">MongoDB</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619615546/Technologies/html-5_.png"
-          alt="html5-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619615546/Technologies/html-5_.png'
+          alt='html5-logo'
+          className='logo-tech'
         />
-        <h3>HTML5</h3>
+        <h3 className="tech-title">HTML5</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop/v1619086218/Technologies/css-3.png"
-          alt="css3-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/c_crop/v1619086218/Technologies/css-3.png'
+          alt='css3-logo'
+          className='logo-tech'
         />
-        <h3>CSS3</h3>
+        <h3 className="tech-title">CSS3</h3>
       </div>
-      <div className="technology">
+      <div className='technology'>
         <img
-          src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/material-ui.png"
-          alt="material-ui-logo"
-          className="logo-tech"
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619086218/Technologies/material-ui.png'
+          alt='material-ui-logo'
+          className='logo-tech'
         />
-        <h3>Material UI</h3>
+        <h3 className="tech-title">Material UI</h3>
       </div>
+    </div>
     </div>
   </section>
 );

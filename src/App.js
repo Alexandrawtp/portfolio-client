@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-import Home from "./pages/Home.js";
-import About from "./pages/About.js";
-import NewProject from "./pages/NewProject.js";
-import ProjectDetails from "./pages/ProjectDetails.js";
-import EditProject from "./pages/EditProject";
-import Login from "./pages/Login.js";
-import SignUp from "./pages/SignUp.js";
-import Error404 from "./pages/Error404.js";
-import axios from "axios";
-import config from "./config";
+} from 'react-router-dom';
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import NewProject from './pages/NewProject.js';
+import ProjectDetails from './pages/ProjectDetails.js';
+import EditProject from './pages/EditProject';
+import Login from './pages/Login.js';
+import SignUp from './pages/SignUp.js';
+import Error404 from './pages/Error404.js';
+import axios from 'axios';
+import config from './config';
 
 export const UserContext = React.createContext();
 export const ProjectContext = React.createContext();
 
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  console.log('logged in ?', LoggedInUser);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    console.log("app useEffect")
     if (!LoggedInUser) {
       axios
         .get(`${config.API_URL}/api/me`, { withCredentials: true })
@@ -75,39 +75,36 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path="/"
+            path='/'
             render={() => <Home onLogOut={handleLogout} />}
           />
-          <Route path="/about" component={About} />
-          <Route path="/login">
+          <Route path='/about' component={About} />
+          <Route path='/login'>
             {LoggedInUser ? (
-              <Redirect to="/" />
+              <Redirect to='/' />
             ) : (
               <Login onSignIn={handleSignIn} error={errorMessage} />
             )}
           </Route>
-          <Route
-            path="/signup"
-            render={() => (
-              <SignUp onSignUp={handleSignUp} error={errorMessage} />
-            )}
-          />
-          <Route path="/add">
+          <Route path='/signup'>
             {LoggedInUser ? (
-              <NewProject error={errorMessage} />
+              <SignUp onSignUp={handleSignUp} error={errorMessage} />
             ) : (
-              <Redirect to="/login" />
+              <Redirect to='/' />
             )}
           </Route>
+          <Route path='/add'>
+              <NewProject error={errorMessage} />
+          </Route>
           <Route
-            path="/project/edit/:id"
+            path='/project/edit/:id'
             render={(props) => <EditProject {...props} />}
           />
           <Route
-            path="/project/:id"
+            path='/project/:id'
             render={(props) => <ProjectDetails {...props} />}
           />
-          <Route path="/" component={Error404} />
+          <Route path='/' component={Error404} />
         </Switch>
       </Router>
     </UserContext.Provider>

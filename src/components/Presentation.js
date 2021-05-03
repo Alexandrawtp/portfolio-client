@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Presentation = () => (
-  <section className="paragraph-about horizontally-align">
-    <div className="about-text">
+  <section className='paragraph-about horizontally-align'>
+    <div className='about-text'>
       As a former art historian in the art market field, I have always enjoyed
       playing with databases and enigmas.
       <p>
@@ -18,9 +18,9 @@ const Presentation = () => (
     </div>
     <div>
       <img
-        src="https://res.cloudinary.com/alexandra-wtp/image/upload/v1619603464/icons/photoid.png"
-        alt="id"
-        className="photo-id"
+        src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619603464/icons/photoid.png'
+        alt='id'
+        className='photo-id'
       />
     </div>
   </section>

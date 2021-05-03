@@ -1,12 +1,12 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import blue from "@material-ui/core/colors/blue";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import deepPurple from '@material-ui/core/colors/deepPurple';
 
 const AddForm = () => {
-  const color = blue[600];
+  const color = deepPurple[300];
 
   const theme = createMuiTheme({
     palette: {
@@ -19,33 +19,33 @@ const AddForm = () => {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant='h6' gutterBottom>
           New project
         </Typography>
-        <Grid container spacing={4} >
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <TextField name="name" label="Name" fullWidth />
+            <TextField name='name' label='Name' fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField name="date" label="Date" fullWidth />
+            <TextField name='date' label='Date' fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField name="about" label="About" fullWidth />
+            <TextField name='about' label='About' fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField name="description" label="Description" fullWidth />
+            <TextField name='description' label='Description' fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField id="url" name="url" label="Url" fullWidth />
+            <TextField id='url' name='url' label='Url' fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField name="teammates" label="Teammates" fullWidth />
+            <TextField name='teammates' label='Teammates' fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField name="technologies" label="Technologies" fullWidth />
+            <TextField name='technologies' label='Technologies' fullWidth />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField name="githubRepo" label="Github Repository" fullWidth />
+            <TextField name='githubRepo' label='Github Repository' fullWidth />
           </Grid>
         </Grid>
       </React.Fragment>

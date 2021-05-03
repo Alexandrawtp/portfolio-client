@@ -27,7 +27,7 @@ const SecondaryButton = (props) => {
         <Button
           className={classes.root}
           type='submit'
-          style={{ color: 'white' }}
+          style={{ color: 'black' }}
         >
           Github
           <ChevronRightRoundedIcon style={{ color: 'black' }} />

@@ -36,7 +36,7 @@ const ProjectDetails = (props) => {
             <PrimaryButton addText='discover' />
           </a>
           <a href={project.githubRepo} target='_blank' rel='noreferrer' className='no-style-link'>
-            <SecondaryButton addText="github"/>
+            <SecondaryButton addText='github'/>
           </a>
         </div>
       </div>

@@ -94,7 +94,11 @@ const App = () => {
             )}
           </Route>
           <Route path='/add'>
+            {LoggedInUser ? (
               <NewProject error={errorMessage} />
+            ) : (
+              <Redirect to='/' />
+            )}
           </Route>
           <Route
             path='/project/edit/:id'

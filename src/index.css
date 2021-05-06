@@ -68,15 +68,6 @@ body, html {
 
 /* General setup */
 
-.navBarBlack {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-  background-color: #9b8bf8;
-  margin-bottom: 40px;
-}
-
 .navBar {
   position: fixed;
   top: 0;
@@ -87,6 +78,10 @@ body, html {
   padding: 20px 0;
   background-color: rgb(99, 88, 255, 0.4);
   z-index: 2;
+}
+
+.divider {
+  height: 120px;
 }
 
 .nav-list {
@@ -407,13 +402,17 @@ h3 {
   flex-wrap: wrap;
   width: 40%;
   padding: 20px;
-  min-width: 320px;
-  height: 400px;
+  min-width: 300px;
 }
 
 .location {
-  width: 100%;
   display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0 30px;
+  height: 48px;
+  font-weight: 600;
+  font-size: 0.875rem;
 }
 
 .photo-id {
@@ -423,7 +422,13 @@ h3 {
 }
 
 .contact-group {
-  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 120px;
+  height: 170px;
+  margin: 15px;
+  display: flex;
 }
 
 .paragraph-about {
@@ -437,6 +442,7 @@ h3 {
   width: 50%;
   min-width: 320px;
   color: #000000;
+  margin: 20px 0;
 }
 
 .box {
@@ -471,10 +477,13 @@ h3 {
 @media (min-width: 0px) and (max-width: 785px) {
   .title-home {
     font-size: 27px;
-    text-align: center;
+    width: 100%;
+  }
+  .section-1-left {
+    width: 80%;
   }
   .double-buttons {
-    margin: 40px auto 0;
+    margin: 20px 0 0;
   }
   .logo-portfolio {
     width: 40px;

@@ -23,6 +23,7 @@ const ProjectDetails = (props) => {
   return (
     <>
       <NavBar />
+      <div className='divider' />
       <div className='project-header'>
         <h1>{project.name}</h1>
         <h2 className='paragraph'>{project.date}</h2>

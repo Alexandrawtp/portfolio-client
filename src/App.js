@@ -87,11 +87,7 @@ const App = () => {
             )}
           </Route>
           <Route path='/signup'>
-            {LoggedInUser ? (
               <SignUp onSignUp={handleSignUp} error={errorMessage} />
-            ) : (
-              <Redirect to='/' />
-            )}
           </Route>
           <Route path='/add'>
             {LoggedInUser ? (

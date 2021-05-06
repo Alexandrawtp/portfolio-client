@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     '& > *': {
-      margin: theme.spacing(2),
+      margin: theme.spacing(0),
     },
   },
   large: {
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(20),
     height: theme.spacing(20),
     border: 'solid 4px white',
+    margin: 0
   },
 }));
 

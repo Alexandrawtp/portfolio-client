@@ -57,6 +57,7 @@ export default function Form(props) {
   return (
     <>
       <NavBar />
+      <div className='divider' />
       <form onSubmit={(e) => addData(e)} className='form'>
         <AddForm />
         <UploadButton />

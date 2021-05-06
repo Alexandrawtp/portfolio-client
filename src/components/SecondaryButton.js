@@ -15,31 +15,33 @@ const useStyles = makeStyles({
       marginLeft: '10px',
       background: 'transparent',
     },
+    fontWeight: 600
   },
 });
 
 const SecondaryButton = (props) => {
   const classes = useStyles();
+  const text = props.addText;
 
   return (
     <>
-      {props.addText === 'github' ? (
-        <Button
-          className={classes.root}
-          type='submit'
-          style={{ color: 'black' }}
-        >
-          Github
-          <ChevronRightRoundedIcon style={{ color: 'black' }} />
-        </Button>
-      ) : (
+      {text === 'contact me' ? (
         <Button
           className={classes.root}
           type='submit'
           style={{ color: 'white' }}
         >
-          Contact me
+          {text}
           <ChevronRightRoundedIcon style={{ color: 'white' }} />
+        </Button>
+      ) : (
+        <Button
+          className={classes.root}
+          type='submit'
+          style={{ color: 'black' }}
+        >
+          {text}
+          <ChevronRightRoundedIcon style={{ color: 'black' }} />
         </Button>
       )}
     </>

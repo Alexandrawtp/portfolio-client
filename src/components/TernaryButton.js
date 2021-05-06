@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     '&:hover': {
       background: 'rgb(99, 88, 255, 1)'
     },
+    fontWeight: 600
   },
 });
 

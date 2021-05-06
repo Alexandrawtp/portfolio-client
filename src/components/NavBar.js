@@ -17,7 +17,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='navBarBlack'>
+    <div className='navBar'>
         <Link to='/'>
           <img
             src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619110538/icons/logo-black.png'

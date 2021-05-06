@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     height: 48,
     padding: '0 30px',
     boxShadow: color,
-    margin: '20px 0'
+    margin: '30px 0',
   },
 });
 

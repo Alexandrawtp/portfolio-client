@@ -62,6 +62,14 @@ const Technologies = () => (
         />
         <h3 className="tech-title">Material UI</h3>
       </div>
+      <div className='technology'>
+        <img
+          src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1620309346/typescript_arene6.png'
+          alt='typescript-logo'
+          className='logo-tech'
+        />
+        <h3 className="tech-title">Typescript</h3>
+      </div>
     </div>
     </div>
   </section>

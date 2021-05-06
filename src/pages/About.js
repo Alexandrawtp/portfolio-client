@@ -8,6 +8,7 @@ const About = () => {
   return (
     <>
       <NavBar />
+      <div className='divider' />
       <Presentation />
       <div className='horizontally-align blue-background'>
         <Doughnut />

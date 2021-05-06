@@ -26,6 +26,7 @@ export default function SignUp(props) {
   return (
     <>
       <NavBar />
+      <div className='divider' />
       <Container component='main' maxWidth='xs'>
         <CssBaseline />
         <div className={classes.paper}>

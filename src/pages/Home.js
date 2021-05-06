@@ -15,7 +15,7 @@ const Home = () => {
         <div className='header-content horizontally-align'>
           <div className='section-1-left'>
           <div className='title-home'>
-          Welcome ! My name is Alexandra, and I am a full stack web developer.
+          Welcome ! I am Alexandra, full stack developer.
           </div>
             <div className='horizontally-align double-buttons'>
               <a href='#projects' className='no-style-link'>

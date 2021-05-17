@@ -8,6 +8,8 @@ import MyDialogue from './Dialogue';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Card from './Card';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
   },
   extendedIcon: {
     marginRight: theme.spacing(1),
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
 }));
 
@@ -42,23 +49,10 @@ const Projects = () => {
   return (
     <section className='horizontally-align project-bloc'>
       {projects.map((project, index) => (
-        <span key={index} className='home-group-project'>
-          <Link to={`/project/${project._id}`} className='no-style-link'>
-            {project.name === 'Fabienne Fiacre' ? (
-              <video
-                controls
-                autoPlay
-                loop
-                muted
-                className='video-project home-shadow'
-              >
-                <source src={project.video} type='video/mp4'></source>
-                Your browser does not support HTML video tag
-              </video>
-            ) : (
-              <img src={project.image} alt='project' className='home-project' />
-            )}
-          </Link>
+        <span key={index} >
+            <Link to={`/project/${project._id}`} className='no-style-link'>
+              <Card name={project.name} about={project.about} image={project.image}/>
+            </Link>
           {LoggedInUser ? (
             <div className={classes.root}>
               <Fab

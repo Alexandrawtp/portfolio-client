@@ -154,6 +154,12 @@ h3 {
   font-size: 16px;
 }
 
+h4 {
+  color: rgb(148, 122, 253);
+  font-size: 18px;
+
+}
+
 .paragraph {
   margin: 10px 0;
 }
@@ -252,20 +258,6 @@ h3 {
   box-shadow: 0px 0px 70px 2px rgb(209, 224, 255);
 }
 
-.home-project:hover {
-  box-shadow: 0px 0px 70px 5px rgb(209, 224, 255);
-}
-
-.home-group-project {
-  width: 40%;
-  min-width: 320px;
-  max-width: 500px;
-  text-align: center;
-  background-color: #e8f0ff;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 7px;
-}
 
 /* Add */
 

@@ -1,11 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 import deepPurple from '@material-ui/core/colors/deepPurple';
-const color = deepPurple[300];
 
 const UseStyles = makeStyles((theme) => ({
   palette: {
     primary: {
-      main: color,
+      main: deepPurple[300],
     },
   },
   paper: {

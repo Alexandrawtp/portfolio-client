@@ -53,7 +53,7 @@ const ProjectDetails = (props) => {
         </div>
       </div>
       <div className='horizontally-align project-bloc'>
-        {windowWidth > 400 ? (
+        {windowWidth > 450 ? (
           <video autoPlay loop muted className='video-project'>
             <source src={project.video} type='video/mp4'></source>
             Your browser does not support HTML video tag

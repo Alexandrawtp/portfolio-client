@@ -4,6 +4,7 @@ import config from '../config';
 import PrimaryButton from '../components/PrimaryButton';
 import NavBar from '../components/NavBar';
 import SecondaryButton from '../components/SecondaryButton';
+import MobileVideoPlayer from '../components/MobileVideoPlayer';
 
 const ProjectDetails = (props) => {
   let projectId = props.match.params.id;
@@ -59,11 +60,7 @@ const ProjectDetails = (props) => {
             Your browser does not support HTML video tag
           </video>
         ) : (
-          <video autoPlay webkit-playsinline playsinline webkitExitFullscreen
- loop muted className='video-project'>
-            <source src={project.video} type='video/mp4'></source>
-            Your browser does not support HTML video tag
-          </video>
+          <MobileVideoPlayer video={project.video} />
         )}
         <img src={project.image} alt='screen' className='home-img' />
         <img src={project.horizontal} alt='screen' className='horizontal-img' />

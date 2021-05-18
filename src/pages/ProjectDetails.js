@@ -59,7 +59,7 @@ const ProjectDetails = (props) => {
             Your browser does not support HTML video tag
           </video>
         ) : (
-          <video controls loop muted className='video-project'>
+          <video autoPlay webkit-playsinline playsinline loop muted className='video-project'>
             <source src={project.video} type='video/mp4'></source>
             Your browser does not support HTML video tag
           </video>

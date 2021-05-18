@@ -341,9 +341,15 @@ h4 {
 .home-img {
   margin: 20px;
   width: 50%;
-  min-width: 320px;
   border-radius: 10px;
   box-shadow: 0px 0px 8px 5px rgb(233, 233, 233);
+}
+
+.middle-img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 5px rgb(233, 233, 233);
+  margin: 20px;
 }
 
 .video-project {
@@ -357,6 +363,7 @@ h4 {
 
 .video-project-mobile {
   margin: auto;
+  margin-bottom: 20px;
   border: solid 7px rgb(230, 235, 243);
   box-shadow: 0px 0px 3px 2px rgb(219, 221, 229);
   border-radius: 15px;
@@ -469,10 +476,26 @@ h4 {
   width: 70px;
 }
 
+.error-page {
+  height: 1200px;
+}
+
+.error-page-content {
+  padding: 130px 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
 @media (min-width: 0px) and (max-width: 785px) {
   .title-home {
     font-size: 27px;
     width: 100%;
+  }
+  .home-img {
+    width: 94%;
+  }
+  .middle-img {
+    width: 94%;
   }
   .section-1-left {
     width: 80%;

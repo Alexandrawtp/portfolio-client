@@ -63,8 +63,8 @@ const ProjectDetails = (props) => {
           <MobileVideoPlayer video={project.video} />
         )}
         <img src={project.image} alt='screen' className='home-img' />
-        <img src={project.horizontal} alt='screen' className='horizontal-img' />
-        <img src={project.tablette} alt='screen' className='tablette-img' />
+        <img src={project.horizontal} alt='screen' className='middle-img' />
+        <img src={project.tablette} alt='screen' className='middle-img' />
       </div>
     </>
   );

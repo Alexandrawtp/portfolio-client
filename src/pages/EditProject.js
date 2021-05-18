@@ -67,6 +67,7 @@ const EditForm = (props) => {
   return (
     <>
       <Navbar />
+      <div className='divider' />
       <form onSubmit={(e) => handleEdit(e, project)} className='form'>
         <ThemeProvider theme={theme}>
           <React.Fragment>

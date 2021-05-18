@@ -22,7 +22,6 @@ export default function Form(props) {
     let teammates = e.target.teammates.value;
     let githubRepo = e.target.githubRepo.value;
     let image = e.target.image.files[0];
-    console.log(image)
 
     let uploadForm = new FormData();
     uploadForm.append('imageUrl', image);

@@ -8,6 +8,7 @@ import SecondaryButton from '../components/SecondaryButton';
 const ProjectDetails = (props) => {
   let projectId = props.match.params.id;
   const [project, setProject] = useState(null);
+  const windowWidth = window.innerWidth;
 
   useEffect(() => {
     axios
@@ -33,19 +34,36 @@ const ProjectDetails = (props) => {
         <div className='paragraph'>{project.about}</div>
         <div className='paragraph'>{project.description}</div>
         <div className='horizontally-align double-buttons'>
-          <a href={project.url} target='_blank' rel='noreferrer' className='no-style-link'>
+          <a
+            href={project.url}
+            target='_blank'
+            rel='noreferrer'
+            className='no-style-link'
+          >
             <PrimaryButton addText='discover' />
           </a>
-          <a href={project.githubRepo} target='_blank' rel='noreferrer' className='no-style-link'>
-            <SecondaryButton addText='github'/>
+          <a
+            href={project.githubRepo}
+            target='_blank'
+            rel='noreferrer'
+            className='no-style-link'
+          >
+            <SecondaryButton addText='github' />
           </a>
         </div>
       </div>
       <div className='horizontally-align project-bloc'>
-        <video controls autoPlay loop muted webkit-playsinline playsinline className='video-project'>
-          <source src={project.video} type='video/mp4'></source>
-          Your browser does not support HTML video tag
-        </video>
+        {windowWidth > 400 ? (
+          <video autoPlay loop muted className='video-project'>
+            <source src={project.video} type='video/mp4'></source>
+            Your browser does not support HTML video tag
+          </video>
+        ) : (
+          <video controls loop muted className='video-project'>
+            <source src={project.video} type='video/mp4'></source>
+            Your browser does not support HTML video tag
+          </video>
+        )}
         <img src={project.image} alt='screen' className='home-img' />
         <img src={project.horizontal} alt='screen' className='horizontal-img' />
         <img src={project.tablette} alt='screen' className='tablette-img' />

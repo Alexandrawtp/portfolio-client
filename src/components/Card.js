@@ -27,9 +27,8 @@ export default function MediaCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.image}
-          alt="Contemplative Reptile"
-          title="Contemplative Reptile"
+          image={props.picture}
+          alt="Project Home Page"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

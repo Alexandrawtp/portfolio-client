@@ -51,7 +51,7 @@ const Projects = () => {
       {projects.map((project, index) => (
         <span key={index} >
             <Link to={`/project/${project._id}`} className='no-style-link'>
-              <Card name={project.name} about={project.about} image={project.image}/>
+              <Card name={project.name} about={project.about} picture={project.image}/>
             </Link>
           {LoggedInUser ? (
             <div className={classes.root}>

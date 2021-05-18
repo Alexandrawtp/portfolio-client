@@ -30,7 +30,7 @@ const MobileVideo = (props) => {
           playing={true}
           width="90%"
           height="100%"
-          controls={false}
+          controls={true}
           url={props.video}
           config={{ file: { attributes: { controlsList: "nodownload" } } }}
         />

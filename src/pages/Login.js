@@ -5,10 +5,10 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import UseStyles from '../components/UseStyle.js';
+import UseStyles from '../components/UseStyle';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import deepPurple from '@material-ui/core/colors/deepPurple';
-import NavBar from '../components/NavBar.js';
+import NavBar from '../components/NavBar';
 
 export default function SignIn(props) {
   const classes = UseStyles();
@@ -39,7 +39,6 @@ export default function SignIn(props) {
                     id='email'
                     name='email'
                     label='Email Address'
-                    className={classes.formAfter}
                     fullWidth
                   />
                 </Grid>
@@ -64,7 +63,7 @@ export default function SignIn(props) {
                 </div>
               ) : null}
               <Grid container justify='center' width='100%'>
-                <PrimaryButton addText='signIn' />
+                <PrimaryButton addText='signin' />
               </Grid>
               <Grid container justify='flex-end'>
                 <Grid item>

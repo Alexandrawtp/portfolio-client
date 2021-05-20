@@ -1,5 +1,5 @@
 import React from 'react';
-import PrimaryButton from '../components/PrimaryButton.js';
+import PrimaryButton from '../components/PrimaryButton';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import UseStyles from '../components/UseStyle';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import deepPurple from '@material-ui/core/colors/deepPurple';
-import NavBar from '../components/NavBar.js';
+import NavBar from '../components/NavBar';
 
 export default function SignUp(props) {
   const classes = UseStyles();
@@ -33,17 +33,15 @@ export default function SignUp(props) {
           <Typography component='h1' variant='h5'>
             Sign up
           </Typography>
-          <form className={classes.form} noValidate onSignUp={props.onSignUp}>
+          <form className={classes.form} onSubmit={props.onSignUp}>
             <ThemeProvider theme={theme}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
-                    autoComplete='false'
                     name='firstName'
                     fullWidth
                     id='firstName'
                     label='First Name'
-                    autoFocus
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -69,7 +67,6 @@ export default function SignUp(props) {
                     label='Password'
                     type='password'
                     id='password'
-                    autoComplete='current-password'
                   />
                 </Grid>
                 <div>
@@ -85,13 +82,9 @@ export default function SignUp(props) {
                   ) : null}
                 </div>
               </Grid>
-              <PrimaryButton
-                type='submit'
-                fullWidth
-                variant='contained'
-                addText='signUp'
-                className={classes.submit}
-              />
+              <Grid container justify='center' width='100%'>
+                <PrimaryButton addText='signup' />
+              </Grid>
               <Grid container justify='flex-end'>
                 <Grid item>
                   <Link href='/login' variant='body2'>

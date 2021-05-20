@@ -2,38 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../App';
 import config from '../config';
 import axios from 'axios';
-import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import MyDialogue from './Dialogue';
-import Fab from '@material-ui/core/Fab';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Card from './Card';
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-  extendedIcon: {
-    marginRight: theme.spacing(1),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
+import AdminButtons from './AdminButtons';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const LoggedInUser = useContext(UserContext);
-  const [openedDialogue, setOpenedDialogue] = useState(false);
-  const [nameToDelete, setNameToDelete] = useState([]);
-  const [idToDelete, setIdToDelete] = useState([]);
-  const classes = useStyles();
 
   useEffect(() => {
     axios
@@ -54,35 +29,10 @@ const Projects = () => {
               <Card name={project.name} about={project.about} picture={project.image}/>
             </Link>
           {LoggedInUser ? (
-            <div className={classes.root}>
-              <Fab
-                color='primary'
-                aria-label='edit'
-                href={`/project/edit/${project._id}`}
-              >
-                <EditIcon />
-              </Fab>
-              <Fab
-                color='secondary'
-                aria-label='edit'
-                onClick={() => {
-                  setOpenedDialogue(true);
-                  setIdToDelete(project._id);
-                  setNameToDelete(project.name);
-                }}
-              >
-                <DeleteIcon />
-              </Fab>
-            </div>
+            <AdminButtons projectName={project.name} projectId={project._id} />
           ) : null}
         </span>
       ))}
-      <MyDialogue
-        projectName={nameToDelete}
-        projectId={idToDelete}
-        open={openedDialogue}
-        setOpen={setOpenedDialogue}
-      />
     </section>
   );
 };

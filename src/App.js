@@ -35,6 +35,7 @@ const App = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
+    
     let user = {
       firstName: e.target.firstName.value,
       lastName: e.target.lastName.value,

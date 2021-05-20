@@ -47,16 +47,15 @@ const Dialogue = (props) => {
       >
         <DialogTitle
           id='alert-dialog-slide-title'
-          disableTypography
           className={classes.dialogueTitle}
         >{`Do you really want to delete ${props.projectName} ?`}</DialogTitle>
         <DialogActions>
-          <Button onClick={handleClose} color='primary'>
+          <Button onClick={handleClose} color='secondary'>
             No
           </Button>
           <Button
             onClick={() => handleCloseAndDelete(props.projectId)}
-            color='primary'
+            color='secondary'
             autoFocus
           >
             Yes

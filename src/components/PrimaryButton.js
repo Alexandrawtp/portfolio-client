@@ -1,17 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import deepPurple from '@material-ui/core/colors/deepPurple';
-const color = deepPurple[900];
 
 const useStyles = makeStyles({
   root: {
-    background: `linear-gradient(45deg, #5e66ff 30%, #ffaba0 90%)`,
+    background: `linear-gradient(45deg, #105345 30%, #21CBF3 80%)`,
     borderRadius: 3,
     color: 'white',
     height: 48,
     padding: '0 30px',
-    boxShadow: color,
     margin: '30px 0',
   },
 });

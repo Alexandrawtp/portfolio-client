@@ -4,21 +4,10 @@ import config from '../config';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import deepPurple from '@material-ui/core/colors/deepPurple';
 import { useHistory } from 'react-router-dom';
 import Navbar from '../components/NavBar';
 import PrimaryButton from '../components/PrimaryButton';
 
-const color = deepPurple[300];
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: color,
-    },
-  },
-});
 
 const EditForm = (props) => {
   let projectId = props.match.params.id;
@@ -69,7 +58,6 @@ const EditForm = (props) => {
       <Navbar />
       <div className='divider' />
       <form onSubmit={(e) => handleEdit(e, project)} className='form'>
-        <ThemeProvider theme={theme}>
           <React.Fragment>
             <Typography variant='h6' gutterBottom>
               Modify project
@@ -86,6 +74,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.name}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -98,6 +87,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.date}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -110,6 +100,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.about}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -122,6 +113,7 @@ const EditForm = (props) => {
                     rows={4}
                     defaultValue={project.description}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -134,6 +126,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.url}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -146,6 +139,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.teammates}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -158,6 +152,7 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.technologies}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -170,12 +165,12 @@ const EditForm = (props) => {
                     rows={2}
                     defaultValue={project.githubRepo}
                     onChange={handleChange}
+                    color='secondary'
                   />
                 </Grid>
               </Grid>
             </div>
           </React.Fragment>
-        </ThemeProvider>
         <Grid container justify='center' width='100%'>
           <PrimaryButton type='submit' addText='submit' />
         </Grid>

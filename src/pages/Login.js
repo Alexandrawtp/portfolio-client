@@ -6,21 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import UseStyles from '../components/UseStyle';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import deepPurple from '@material-ui/core/colors/deepPurple';
 import NavBar from '../components/NavBar';
 
 export default function SignIn(props) {
   const classes = UseStyles();
-  const primary = deepPurple[300];
-
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: primary,
-      },
-    },
-  });
 
   return (
     <>
@@ -32,13 +21,13 @@ export default function SignIn(props) {
             Sign in
           </Typography>
           <form className={classes.form} onSubmit={props.onSignIn}>
-            <ThemeProvider theme={theme}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <TextField
                     id='email'
                     name='email'
                     label='Email Address'
+                    color='secondary'
                     fullWidth
                   />
                 </Grid>
@@ -49,6 +38,7 @@ export default function SignIn(props) {
                     label='Password'
                     type='password'
                     fullWidth
+                    color='secondary'
                   />
                 </Grid>
               </Grid>
@@ -67,12 +57,11 @@ export default function SignIn(props) {
               </Grid>
               <Grid container justify='flex-end'>
                 <Grid item>
-                  <Link href='/signup' variant='body2'>
+                  <Link href='/signup' variant='body2' color='secondary'>
                     Don't have an account? Sign Up
                   </Link>
                 </Grid>
               </Grid>
-            </ThemeProvider>
           </form>
         </div>
       </Container>

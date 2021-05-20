@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
-      margin: theme.spacing(4),
+      margin: theme.spacing(0),
     },
   },
   input: {

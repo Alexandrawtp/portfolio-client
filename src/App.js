@@ -15,9 +15,21 @@ import SignUp from './pages/SignUp.js';
 import Error404 from './pages/Error404.js';
 import axios from 'axios';
 import config from './config';
-
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 export const UserContext = React.createContext();
 export const ProjectContext = React.createContext();
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: 'rgba(75, 192, 192, 0.4)',
+    },
+    secondary: {
+      main: 'rgba(75, 192, 192, 1)',
+    },
+  },
+});
 
 const App = () => {
   const [LoggedInUser, setLoggedInUser] = useState(false);
@@ -71,6 +83,7 @@ const App = () => {
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <UserContext.Provider value={LoggedInUser}>
       <Router>
         <Switch>
@@ -109,6 +122,7 @@ const App = () => {
         </Switch>
       </Router>
     </UserContext.Provider>
+    </ThemeProvider>
   );
 };
 

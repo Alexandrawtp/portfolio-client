@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(25),
     height: theme.spacing(25),
-    border: 'solid 4px white',
+    border: 'solid 5px white',
   },
   small: {
     width: theme.spacing(20),

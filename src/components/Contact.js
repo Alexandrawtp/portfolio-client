@@ -1,23 +1,19 @@
 import React from 'react';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import MailRoundedIcon from '@material-ui/icons/MailRounded';
-import deepPurple from '@material-ui/core/colors/deepPurple';
 import SecondaryButton from './SecondaryButton';
 
 const Contact = () => (
   <section className='contact horizontally-align'>
     <div className='vertically-align contact-group'>
       <div>
-        <LocationOnRoundedIcon
-          style={{ color: deepPurple[200], fontSize: 60 }}
-        />
+        <LocationOnRoundedIcon color='primary' style={{ fontSize: 60 }} />
       </div>
       <div className='location'>PARIS</div>
     </div>
-
     <div className='vertically-align contact-group'>
       <div className='centered-content'>
-        <MailRoundedIcon style={{ color: deepPurple[200], fontSize: 60 }} />
+        <MailRoundedIcon color='primary' style={{ fontSize: 60 }} />
       </div>
       <div className='centered-content'>
         <a
@@ -28,7 +24,6 @@ const Contact = () => (
         </a>
       </div>
     </div>
-
     <div className='vertically-align contact-group'>
       <div>
         <img
@@ -48,7 +43,6 @@ const Contact = () => (
         </a>
       </div>
     </div>
-
     <div className='vertically-align contact-group'>
       <div>
         <img

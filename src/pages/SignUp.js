@@ -7,21 +7,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import UseStyles from '../components/UseStyle';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import deepPurple from '@material-ui/core/colors/deepPurple';
 import NavBar from '../components/NavBar';
 
 export default function SignUp(props) {
   const classes = UseStyles();
-  const color = deepPurple[300];
-
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: color,
-      },
-    },
-  });
 
   return (
     <>
@@ -34,7 +23,6 @@ export default function SignUp(props) {
             Sign up
           </Typography>
           <form className={classes.form} onSubmit={props.onSignUp}>
-            <ThemeProvider theme={theme}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -42,6 +30,7 @@ export default function SignUp(props) {
                     fullWidth
                     id='firstName'
                     label='First Name'
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -50,6 +39,7 @@ export default function SignUp(props) {
                     id='lastName'
                     label='Last Name'
                     name='lastName'
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -58,6 +48,7 @@ export default function SignUp(props) {
                     id='email'
                     label='Email Address'
                     name='email'
+                    color='secondary'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -67,6 +58,7 @@ export default function SignUp(props) {
                     label='Password'
                     type='password'
                     id='password'
+                    color='secondary'
                   />
                 </Grid>
                 <div>
@@ -87,12 +79,11 @@ export default function SignUp(props) {
               </Grid>
               <Grid container justify='flex-end'>
                 <Grid item>
-                  <Link href='/login' variant='body2'>
+                  <Link href='/login' variant='body2' color='secondary'>
                     Already have an account? Sign in
                   </Link>
                 </Grid>
               </Grid>
-            </ThemeProvider>
           </form>
         </div>
       </Container>

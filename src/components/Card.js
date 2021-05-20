@@ -51,7 +51,7 @@ export default function MediaCard(props) {
         <Grid container justify='space-between' alignItems="center">
           <div>
             <Link to={`/project/${props.projectId}`} className='no-style-link'>
-              <Button size='small' color='primary'>
+              <Button size='small' color='secondary'>
                 Learn More
               </Button>
             </Link>

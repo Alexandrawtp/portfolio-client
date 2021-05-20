@@ -10,7 +10,7 @@ body, html {
 
 .css-selector {
   width: 100%;
-  background: linear-gradient(240deg, #5e66ff, #ffaba0, #c7e3ff, #99a6f9, #8d60f7);
+  background: linear-gradient(240deg, #064e3c, #5ea59d, #a1ceca, #5ea59d, #3fa792);;
   background-size: 1000% 1000%;
   -webkit-animation: AnimationName 15s ease infinite;
   -moz-animation: AnimationName 15s ease infinite;
@@ -76,12 +76,14 @@ body, html {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  background-color: rgb(99, 88, 255, 0.4);
+  background-color: rgba(37, 156, 163, 0.4);
+  margin: 0;
   z-index: 2;
 }
 
 .divider {
-  height: 120px;
+  padding: 7px;
+  height: 110px;
 }
 
 .nav-list {
@@ -105,6 +107,7 @@ body, html {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  margin: 0;
 }
 
 .logout-btn:focus {
@@ -144,7 +147,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(148, 122, 253);
+  color: rgb(13, 13, 13);
   margin: 0;
   font-size: 15px;
 }
@@ -387,7 +390,7 @@ h4 {
 
 .project-bloc {
   display: flex;
-  background-color: rgb(246, 249, 255);
+  background-color: #e8f0ff;
   padding: 50px 3.25%;
 }
 
@@ -412,8 +415,7 @@ h4 {
   align-items: center;
   margin: 20px 0;
   padding: 0 30px;
-  height: 48px;
-  font-weight: 600;
+  height: 46px;
   font-size: 0.875rem;
 }
 
@@ -434,6 +436,7 @@ h4 {
 }
 
 .paragraph-about {
+  padding: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

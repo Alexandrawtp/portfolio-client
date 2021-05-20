@@ -27,7 +27,7 @@ const MobileVideo = (props) => {
       <div ref={videoRef}>
         <ReactPlayer
           className='video-project-mobile'
-          playing={true}
+          playing={false}
           width="90%"
           height="100%"
           controls={true}

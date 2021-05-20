@@ -32,6 +32,7 @@ const AdminButtons = (props) => {
       <div className={classes.root}>
         <Fab
           color='primary'
+          size="small"
           aria-label='edit'
           href={`/project/edit/${props.projectId}`}
         >
@@ -39,6 +40,7 @@ const AdminButtons = (props) => {
         </Fab>
         <Fab
           color='secondary'
+          size="small"
           aria-label='edit'
           onClick={() => {
             setOpenedDialogue(true);

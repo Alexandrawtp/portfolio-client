@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { UserContext } from '../App';
+import React, { useState, useEffect } from 'react';
 import config from '../config';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import Card from './Card';
-import AdminButtons from './AdminButtons';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const LoggedInUser = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -24,13 +20,13 @@ const Projects = () => {
   return (
     <section className='horizontally-align project-bloc'>
       {projects.map((project, index) => (
-        <span key={index} >
-            <Link to={`/project/${project._id}`} className='no-style-link'>
-              <Card name={project.name} about={project.about} picture={project.image}/>
-            </Link>
-          {LoggedInUser ? (
-            <AdminButtons projectName={project.name} projectId={project._id} />
-          ) : null}
+        <span key={index}>
+          <Card
+            name={project.name}
+            about={project.about}
+            picture={project.image}
+            projectId={project._id}
+          />
         </span>
       ))}
     </section>

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Poppins:wght@600;700&display=swap');
 body, html {
   margin: 0;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 15px;
   scroll-behavior: smooth;
@@ -150,21 +149,19 @@ h2 {
   color: rgb(13, 13, 13);
   margin: 0;
   font-size: 15px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 h3 {
   font-weight: 400;
   font-size: 16px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 h4 {
   color: rgb(148, 122, 253);
   font-size: 18px;
-
-}
-
-.paragraph {
-  margin: 10px 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .no-style-link {
@@ -345,13 +342,13 @@ h4 {
   margin: 20px;
   width: 60%;
   border-radius: 7px;
-  box-shadow: 0px 0px 2px 2px rgb(233, 233, 233);
+  box-shadow: 0px 0px 2px 1px rgb(215, 215, 215);
 }
 
 .middle-img {
   width: 45%;
   border-radius: 7px;
-  box-shadow: 0px 0px 2px 2px rgb(233, 233, 233);
+  box-shadow: 0px 0px 2px 1px rgb(215, 215, 215);
   margin: 30px 10px;
 }
 
@@ -417,6 +414,8 @@ h4 {
   padding: 0 30px;
   height: 46px;
   font-size: 0.875rem;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .photo-id {
@@ -436,7 +435,7 @@ h4 {
 }
 
 .paragraph-about {
-  padding: 30px 0;
+  padding: 12px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -448,6 +447,8 @@ h4 {
   min-width: 320px;
   color: #000000;
   margin: 20px 0;
+  text-align: justify;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .box {

@@ -31,7 +31,7 @@ export default function ImageAvatars() {
     <div className={classes.root}>
       <Avatar
         alt='Profile Picture'
-        src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1619603464/icons/photoid.png'
+        src='https://res.cloudinary.com/alexandra-wtp/image/upload/v1621691803/photoid_2_cttz3b.jpg'
         className={matches ? classes.small : classes.large}
       />
     </div>

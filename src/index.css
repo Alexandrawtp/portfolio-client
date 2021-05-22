@@ -328,6 +328,7 @@ h4 {
   align-items: center;
   color: rgb(219, 59, 94);
   font-weight: bold;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 /* Project details */
@@ -359,6 +360,11 @@ h4 {
   border: solid 7px rgb(230, 235, 243);
   box-shadow: 0px 0px 3px 2px rgb(219, 221, 229);
   border-radius: 30px;
+}
+
+.paragraph {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 10px 0;
 }
 
 .video-project-mobile {
